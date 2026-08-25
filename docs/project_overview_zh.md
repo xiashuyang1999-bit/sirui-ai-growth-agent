@@ -13,6 +13,7 @@ SIRUI AI Website Growth Agent 是一个面向海外 B2B 获客的独立站智能
 - 优先审计 Homepage、Products、Product Detail、Factory、OEM/ODM、Private Label 和 Inquiry 页面。
 - 根据页面的业务类型使用不同检查标准。
 - 检查 Title、Meta Description、Canonical、语言、H1、产品入口、询盘 CTA、表单和直接联系方式。
+- 检查 HTTP 状态、robots.txt、XML Sitemap、Sitemap 页面覆盖、JSON-LD Schema 和 Canonical 主域一致性。
 - 输出页面级结果和全站问题汇总。
 - 为每个问题提供证据、high/medium/low 严重程度、P1/P2/P3 优先级和建议动作。
 - 保存 JSON 报告，供运营、SEO、销售和开发团队共同使用。
@@ -57,4 +58,3 @@ python3 -m workflow.main audit https://www.siruitool.com \
 - `page_types`：系统识别出的页面业务类型。
 - `prioritized_issues`：按 P1/P2/P3 排序的问题、证据和建议。
 - `pages`：每一个页面的详细检查结果。
-

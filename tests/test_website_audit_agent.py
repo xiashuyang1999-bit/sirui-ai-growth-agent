@@ -1,9 +1,14 @@
 """Tests for the website audit agent without making network requests."""
 
 import unittest
+import xml.etree.ElementTree as ET
 from unittest.mock import patch
 
-from agents.website_audit_agent import audit_site, audit_website
+from agents.website_audit_agent import (
+    _parse_sitemap_document,
+    audit_site,
+    audit_website,
+)
 
 
 SAMPLE_HTML = """
@@ -13,6 +18,7 @@ SAMPLE_HTML = """
   <title>Paint Roller Manufacturer in China</title>
   <meta name="description" content="Factory-direct painting tools for B2B buyers.">
   <link rel="canonical" href="https://example.com/">
+  <script type="application/ld+json">{"@type": "Organization"}</script>
 </head>
 <body>
   <h1>Paint Roller Manufacturer</h1>
@@ -42,6 +48,7 @@ PRODUCT_DETAIL_HTML = """
   <title>50mm Angled Sash Paint Brush | PB-ANGLE-050</title>
   <meta name="description" content="A private-label angled paint brush.">
   <link rel="canonical" href="https://example.com/products/angled-brush">
+  <script type="application/ld+json">{"@type": "Product"}</script>
 </head>
 <body>
   <h1>50mm Angled Sash Paint Brush</h1>
@@ -49,6 +56,23 @@ PRODUCT_DETAIL_HTML = """
   <a href="mailto:sales@example.com">Send inquiry</a>
 </body>
 </html>
+"""
+
+ROBOTS_TEXT = """User-agent: *
+Disallow:
+Sitemap: https://example.com/sitemap.xml
+"""
+
+SITEMAP_TEXT = """<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://example.com/</loc></url>
+  <url><loc>https://example.com/about</loc></url>
+  <url><loc>https://example.com/products</loc></url>
+  <url><loc>https://example.com/products/angled-brush</loc></url>
+  <url><loc>https://example.com/products/covers</loc></url>
+  <url><loc>https://example.com/products/frames</loc></url>
+  <url><loc>https://example.com/products/rollers</loc></url>
+</urlset>
 """
 
 INQUIRY_HTML_WITHOUT_CANONICAL = """
@@ -70,6 +94,21 @@ def page(url: str, html: str = SAMPLE_HTML) -> dict[str, object]:
     return {"final_url": url, "http_status": 200, "html": html}
 
 
+def technical_resource(url: str, robots_text: str = ROBOTS_TEXT) -> dict[str, object]:
+    if url.endswith("robots.txt"):
+        text = robots_text
+        content_type = "text/plain"
+    else:
+        text = SITEMAP_TEXT
+        content_type = "application/xml"
+    return {
+        "final_url": url,
+        "http_status": 200,
+        "content_type": content_type,
+        "text": text,
+    }
+
+
 class WebsiteAuditAgentTests(unittest.TestCase):
     @patch("agents.website_audit_agent._fetch_page")
     def test_returns_all_audit_sections(self, fetch_page) -> None:
@@ -89,6 +128,7 @@ class WebsiteAuditAgentTests(unittest.TestCase):
                 "seo_basics",
                 "product_structure",
                 "b2b_conversion_elements",
+                "technical_basics",
             },
         )
         self.assertEqual(report["errors"], [])
@@ -99,14 +139,20 @@ class WebsiteAuditAgentTests(unittest.TestCase):
         self.assertEqual(report["summary"]["status"], "error")
         self.assertTrue(report["errors"])
 
+    @patch("agents.website_audit_agent._fetch_text_resource")
     @patch("agents.website_audit_agent._fetch_page")
-    def test_site_audit_follows_prioritized_same_domain_links(self, fetch_page) -> None:
+    def test_site_audit_follows_prioritized_same_domain_links(
+        self, fetch_page, fetch_text_resource
+    ) -> None:
         def fake_fetch(url: str) -> dict[str, object]:
             if url == "https://example.com/":
                 return page("https://example.com/", CRAWL_HOME_HTML)
+            if "/products/" in url:
+                return page(url, PRODUCT_DETAIL_HTML)
             return page(url)
 
         fetch_page.side_effect = fake_fetch
+        fetch_text_resource.side_effect = technical_resource
 
         report = audit_site("https://example.com", max_pages=3)
 
@@ -148,13 +194,15 @@ class WebsiteAuditAgentTests(unittest.TestCase):
         self.assertNotIn("Clear manufacturer positioning", issue_names)
         self.assertNotIn("Core product categories are stated", issue_names)
 
+    @patch("agents.website_audit_agent._fetch_text_resource")
     @patch("agents.website_audit_agent._fetch_page")
     def test_site_report_prioritizes_missing_inquiry_canonical(
-        self, fetch_page
+        self, fetch_page, fetch_text_resource
     ) -> None:
         fetch_page.return_value = page(
             "https://example.com/inquiry", INQUIRY_HTML_WITHOUT_CANONICAL
         )
+        fetch_text_resource.side_effect = technical_resource
 
         report = audit_site("https://example.com/inquiry", max_pages=1)
 
@@ -164,6 +212,52 @@ class WebsiteAuditAgentTests(unittest.TestCase):
         self.assertEqual(issue["name"], "Canonical URL present")
         self.assertEqual(issue["priority"], "P2")
         self.assertTrue(issue["recommendation"])
+
+    @patch("agents.website_audit_agent._fetch_text_resource")
+    @patch("agents.website_audit_agent._fetch_page")
+    def test_robots_disallow_all_is_a_p1_issue(
+        self, fetch_page, fetch_text_resource
+    ) -> None:
+        fetch_page.return_value = page("https://example.com/", SAMPLE_HTML)
+        fetch_text_resource.side_effect = lambda url: technical_resource(
+            url,
+            "User-agent: *\nDisallow: /\nSitemap: https://example.com/sitemap.xml\n",
+        )
+
+        report = audit_site("https://example.com", max_pages=1)
+
+        issue = next(
+            item
+            for item in report["prioritized_issues"]
+            if item["name"] == "Production crawl is allowed"
+        )
+        self.assertEqual(issue["priority"], "P1")
+        self.assertEqual(issue["severity"], "high")
+
+    @patch("agents.website_audit_agent._fetch_page")
+    def test_product_detail_without_product_schema_is_p2(self, fetch_page) -> None:
+        html_without_schema = PRODUCT_DETAIL_HTML.replace(
+            '<script type="application/ld+json">{"@type": "Product"}</script>', ""
+        )
+        fetch_page.return_value = page(
+            "https://example.com/products/angled-brush", html_without_schema
+        )
+
+        report = audit_website("https://example.com/products/angled-brush")
+
+        issue = next(
+            check
+            for check in report["sections"]["technical_basics"]["checks"]
+            if check["name"] == "Relevant structured data is present"
+        )
+        self.assertEqual(issue["status"], "warning")
+        self.assertEqual(issue["priority"], "P2")
+
+    def test_sitemap_parser_rejects_entity_declarations(self) -> None:
+        unsafe_xml = "<!DOCTYPE urlset [<!ENTITY x 'value'>]><urlset></urlset>"
+
+        with self.assertRaises(ET.ParseError):
+            _parse_sitemap_document(unsafe_xml)
 
 
 if __name__ == "__main__":

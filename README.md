@@ -2,7 +2,7 @@
 
 SIRUI AI Website Growth Agent is a multi-agent system for analyzing and improving [siruitool.com](https://www.siruitool.com) as an overseas B2B customer-acquisition channel. It acts as an evidence-based growth team beside the website: it inspects positioning, SEO, product discovery, and inquiry conversion, then turns findings into prioritized work for marketing, sales, and development.
 
-The current v0.3 release provides a read-only, page-type-aware audit foundation. It applies different rules to homepages, product indexes, product details, factory pages, OEM/private-label pages, inquiry pages, and other pages. Findings include evidence, severity, P1/P2/P3 priority, and a recommended action. Nothing in this version changes the production website.
+The current v0.4 release provides a read-only, page-type-aware audit foundation with technical SEO checks. It applies different rules to homepages, product indexes, product details, factory pages, OEM/private-label pages, inquiry pages, and other pages. Findings include evidence, severity, P1/P2/P3 priority, and a recommended action. Nothing in this version changes the production website.
 
 ## Current capabilities
 
@@ -11,6 +11,7 @@ The current v0.3 release provides a read-only, page-type-aware audit foundation.
 - Limit the crawl to 1-25 pages and ignore external domains and common non-HTML files.
 - Check page-specific positioning, SEO basics, product discovery, and B2B conversion routes.
 - Detect titles, meta descriptions, canonical links, language, H1 headings, forms, product links, and direct contact links.
+- Inspect HTTP responses, robots.txt, XML sitemaps, audited-page sitemap coverage, JSON-LD schema, and canonical hostname consistency.
 - Return page-level findings plus a site-wide prioritized issue list.
 - Assign each issue evidence, severity, P1/P2/P3 priority, and a recommended action.
 - Save a reusable JSON report for review, comparison, or downstream workflows.
@@ -71,4 +72,4 @@ The multi-page workflow prioritizes About, Product, Contact, Factory, OEM/ODM, p
 
 ## Current status
 
-Website Audit Agent v0.3 is implemented with single-page and limited multi-page auditing, page-type-aware rules, and prioritized issues. The remaining specialized agents are placeholders.
+Website Audit Agent v0.4 is implemented with single-page and limited multi-page auditing, page-type-aware rules, technical SEO checks, and prioritized issues. The remaining specialized agents are placeholders.

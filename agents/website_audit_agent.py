@@ -5,6 +5,7 @@ from __future__ import annotations
 import json
 import re
 import sys
+import xml.etree.ElementTree as ET
 from datetime import datetime, timezone
 from html.parser import HTMLParser
 from typing import Any
@@ -12,11 +13,12 @@ from urllib.error import HTTPError, URLError
 from urllib.parse import urldefrag, urljoin, urlparse, urlunparse
 from urllib.request import Request, urlopen
 
-AGENT_VERSION = "0.3"
+AGENT_VERSION = "0.4"
 USER_AGENT = f"SIRUI-Website-Audit-Agent/{AGENT_VERSION}"
 MAX_RESPONSE_BYTES = 2_000_000
 MAX_PAGES = 25
 MAX_DISCOVERED_LINKS = 200
+MAX_SITEMAP_FILES = 3
 AUDIT_ERRORS = (HTTPError, URLError, TimeoutError, UnicodeError, ValueError)
 SKIPPED_FILE_SUFFIXES = {
     ".css",
@@ -58,9 +60,11 @@ class _PageParser(HTMLParser):
         self.h1: list[str] = []
         self.links: list[dict[str, str]] = []
         self.forms = 0
+        self.json_ld_scripts: list[str] = []
         self._text: list[str] = []
         self._current_tag = ""
         self._ignored_depth = 0
+        self._json_ld_buffer: list[str] | None = None
 
     def handle_starttag(
         self, tag: str, attrs: list[tuple[str, str | None]]
@@ -70,6 +74,12 @@ class _PageParser(HTMLParser):
 
         if self._current_tag in {"script", "style", "noscript"}:
             self._ignored_depth += 1
+            if (
+                self._current_tag == "script"
+                and attributes.get("type", "").lower().split(";", 1)[0].strip()
+                == "application/ld+json"
+            ):
+                self._json_ld_buffer = []
         elif self._current_tag == "html":
             self.language = attributes.get("lang", "")
         elif self._current_tag == "meta":
@@ -84,11 +94,19 @@ class _PageParser(HTMLParser):
             self.forms += 1
 
     def handle_endtag(self, tag: str) -> None:
+        if tag.lower() == "script" and self._json_ld_buffer is not None:
+            script = "".join(self._json_ld_buffer).strip()
+            if script:
+                self.json_ld_scripts.append(script)
+            self._json_ld_buffer = None
         if tag.lower() in {"script", "style", "noscript"} and self._ignored_depth:
             self._ignored_depth -= 1
         self._current_tag = ""
 
     def handle_data(self, data: str) -> None:
+        if self._json_ld_buffer is not None:
+            self._json_ld_buffer.append(data)
+            return
         if self._ignored_depth:
             return
 
@@ -151,6 +169,34 @@ def _title_h1_aligned(title: str, headings: list[str]) -> bool:
         if word not in ignored
     }
     return bool(h1_words) and len(title_words & h1_words) / len(h1_words) >= 0.6
+
+
+def _extract_schema_types(scripts: list[str]) -> tuple[list[str], int]:
+    schema_types: set[str] = set()
+    invalid_blocks = 0
+
+    def collect(value: Any) -> None:
+        if isinstance(value, dict):
+            schema_type = value.get("@type")
+            if isinstance(schema_type, str):
+                schema_types.add(schema_type)
+            elif isinstance(schema_type, list):
+                schema_types.update(
+                    item for item in schema_type if isinstance(item, str)
+                )
+            for child in value.values():
+                if isinstance(child, (dict, list)):
+                    collect(child)
+        elif isinstance(value, list):
+            for child in value:
+                collect(child)
+
+    for script in scripts:
+        try:
+            collect(json.loads(script))
+        except (json.JSONDecodeError, TypeError):
+            invalid_blocks += 1
+    return sorted(schema_types), invalid_blocks
 
 
 def _validate_url(url: str) -> str:
@@ -246,6 +292,33 @@ def _fetch_page(url: str, timeout: float = 15.0) -> dict[str, Any]:
             "http_status": response.status,
             "html": body.decode(charset, errors="replace"),
         }
+
+
+def _fetch_text_resource(url: str, timeout: float = 15.0) -> dict[str, Any]:
+    last_error: Exception | None = None
+    for attempt in range(2):
+        request = Request(url, headers={"User-Agent": USER_AGENT})
+        try:
+            with urlopen(request, timeout=timeout) as response:  # noqa: S310
+                body = response.read(MAX_RESPONSE_BYTES + 1)
+                if len(body) > MAX_RESPONSE_BYTES:
+                    raise ValueError(
+                        "Technical SEO resource exceeds the 2 MB audit limit."
+                    )
+                charset = response.headers.get_content_charset() or "utf-8"
+                return {
+                    "final_url": response.geturl(),
+                    "http_status": response.status,
+                    "content_type": response.headers.get_content_type(),
+                    "text": body.decode(charset, errors="replace"),
+                }
+        except HTTPError:
+            raise
+        except (URLError, TimeoutError) as error:
+            last_error = error
+            if attempt == 1:
+                raise
+    raise URLError(str(last_error))
 
 
 def _positioning_checks(
@@ -482,9 +555,59 @@ def _conversion_checks(
     return checks
 
 
+def _technical_page_checks(
+    page_type: str,
+    page: dict[str, Any],
+    schema_types: list[str],
+    invalid_json_ld: int,
+    json_ld_blocks: int,
+) -> list[dict[str, Any]]:
+    checks = [
+        _check(
+            "Successful HTTP response",
+            200 <= page["http_status"] < 300,
+            f"HTTP status: {page['http_status']}.",
+            "high",
+            "Return a successful 2xx response for this indexable page.",
+        )
+    ]
+
+    expected_schema: tuple[str, ...] = ()
+    if page_type == "homepage":
+        expected_schema = ("Organization", "WebSite")
+    elif page_type == "product_detail":
+        expected_schema = ("Product",)
+
+    if expected_schema:
+        matching_types = sorted(set(schema_types) & set(expected_schema))
+        checks.append(
+            _check(
+                "Relevant structured data is present",
+                bool(matching_types),
+                f"Schema types found: {', '.join(schema_types)}"
+                if schema_types
+                else "No JSON-LD schema types found.",
+                "medium",
+                f"Add valid {' or '.join(expected_schema)} JSON-LD for this page type.",
+            )
+        )
+    if json_ld_blocks:
+        checks.append(
+            _check(
+                "JSON-LD blocks are valid JSON",
+                invalid_json_ld == 0,
+                f"Found {json_ld_blocks} JSON-LD block(s); {invalid_json_ld} invalid.",
+                "medium",
+                "Correct invalid JSON-LD so search engines can parse the structured data.",
+            )
+        )
+    return checks
+
+
 def _analyze_page(page: dict[str, Any], page_type: str) -> dict[str, Any]:
     parser = _PageParser()
     parser.feed(page["html"])
+    schema_types, invalid_json_ld = _extract_schema_types(parser.json_ld_scripts)
 
     visible_text = parser.visible_text
     positioning_text = " ".join([parser.title, *parser.h1])
@@ -560,6 +683,15 @@ def _analyze_page(page: dict[str, Any], page_type: str) -> dict[str, Any]:
                 parser.forms,
             )
         ),
+        "technical_basics": _section(
+            _technical_page_checks(
+                page_type,
+                page,
+                schema_types,
+                invalid_json_ld,
+                len(parser.json_ld_scripts),
+            )
+        ),
     }
 
     checks = [check for section in sections.values() for check in section["checks"]]
@@ -579,6 +711,12 @@ def _analyze_page(page: dict[str, Any], page_type: str) -> dict[str, Any]:
             "meta_description": parser.description,
             "h1": parser.h1,
             "forms": parser.forms,
+            "canonical": urljoin(page["final_url"], parser.canonical)
+            if parser.canonical
+            else "",
+            "schema_types": schema_types,
+            "json_ld_blocks": len(parser.json_ld_scripts),
+            "invalid_json_ld_blocks": invalid_json_ld,
         },
         "summary": {
             "status": "pass" if passed == len(checks) else "needs_review",
@@ -638,6 +776,289 @@ def audit_website(url: str) -> dict[str, Any]:
             "agent_version": AGENT_VERSION,
             **_error_report(url, audited_at, error),
         }
+
+
+def _site_issue(
+    url: str,
+    name: str,
+    evidence: str,
+    severity: str,
+    recommendation: str,
+) -> dict[str, Any]:
+    return {
+        "url": url,
+        "page_type": "site",
+        "section": "technical_seo",
+        **_check(name, False, evidence, severity, recommendation),
+    }
+
+
+def _url_identity(url: str) -> tuple[str, str]:
+    parsed = urlparse(url)
+    path = parsed.path.rstrip("/") or "/"
+    return _site_host(url), path.lower()
+
+
+def _parse_sitemap_document(text: str) -> tuple[list[str], list[str]]:
+    lowered = text.lower()
+    if "<!doctype" in lowered or "<!entity" in lowered:
+        raise ET.ParseError("DOCTYPE and entity declarations are not supported.")
+    root = ET.fromstring(text)
+    page_urls: list[str] = []
+    child_sitemaps: list[str] = []
+    root_name = root.tag.rsplit("}", 1)[-1].lower()
+
+    for element in root.iter():
+        if element.tag.rsplit("}", 1)[-1].lower() != "loc" or not element.text:
+            continue
+        location = element.text.strip()
+        if root_name == "sitemapindex":
+            child_sitemaps.append(location)
+        elif root_name == "urlset":
+            page_urls.append(location)
+    if root_name not in {"sitemapindex", "urlset"}:
+        raise ET.ParseError(f"Unsupported sitemap root element: {root_name}")
+    return page_urls, child_sitemaps
+
+
+def _audit_technical_seo(
+    root_url: str, page_reports: list[dict[str, Any]]
+) -> tuple[dict[str, Any], list[dict[str, Any]]]:
+    root = urlunparse((*urlparse(root_url)[:2], "/", "", "", ""))
+    host = _site_host(root_url)
+    issues: list[dict[str, Any]] = []
+
+    robots_url = urljoin(root, "robots.txt")
+    robots_report: dict[str, Any] = {
+        "url": robots_url,
+        "accessible": False,
+        "http_status": None,
+        "has_user_agent": False,
+        "blocks_all_crawlers": False,
+        "sitemap_directives": [],
+        "error": "",
+    }
+    sitemap_candidates: list[str] = []
+    try:
+        robots_resource = _fetch_text_resource(robots_url)
+        robots_text = robots_resource["text"]
+        lines = [line.strip() for line in robots_text.splitlines()]
+        sitemap_candidates = [
+            urljoin(root, line.split(":", 1)[1].strip())
+            for line in lines
+            if line.lower().startswith("sitemap:") and ":" in line
+        ]
+        has_user_agent = any(
+            line.lower().startswith("user-agent:") for line in lines
+        )
+        applies_to_all = False
+        blocks_all = False
+        for line in lines:
+            lowered = line.lower()
+            if lowered.startswith("user-agent:"):
+                applies_to_all = lowered.split(":", 1)[1].strip() == "*"
+            elif applies_to_all and lowered.startswith("disallow:"):
+                if lowered.split(":", 1)[1].strip() == "/":
+                    blocks_all = True
+        robots_report.update(
+            {
+                "url": robots_resource["final_url"],
+                "accessible": True,
+                "http_status": robots_resource["http_status"],
+                "has_user_agent": has_user_agent,
+                "blocks_all_crawlers": blocks_all,
+                "sitemap_directives": sitemap_candidates,
+            }
+        )
+        if not has_user_agent:
+            issues.append(
+                _site_issue(
+                    robots_url,
+                    "robots.txt contains crawler directives",
+                    "robots.txt is accessible but has no User-agent directive.",
+                    "low",
+                    "Add explicit User-agent rules so crawl policy is clear.",
+                )
+            )
+        if blocks_all:
+            issues.append(
+                _site_issue(
+                    robots_url,
+                    "Production crawl is allowed",
+                    "User-agent: * includes Disallow: /.",
+                    "high",
+                    "Remove the site-wide disallow rule from the production robots.txt.",
+                )
+            )
+    except AUDIT_ERRORS as error:
+        robots_report["error"] = str(error)
+        issues.append(
+            _site_issue(
+                robots_url,
+                "robots.txt is accessible",
+                f"robots.txt could not be fetched: {error}",
+                "low",
+                "Publish a readable robots.txt with the intended crawl policy and sitemap location.",
+            )
+        )
+
+    same_domain_sitemaps = [
+        sitemap_url
+        for sitemap_url in sitemap_candidates
+        if _site_host(sitemap_url) == host
+    ]
+    sitemap_queue = same_domain_sitemaps or [urljoin(root, "sitemap.xml")]
+    sitemap_queue = list(dict.fromkeys(sitemap_queue))
+    sitemap_files: list[dict[str, Any]] = []
+    sitemap_urls: set[str] = set()
+    visited_sitemaps: set[str] = set()
+
+    while sitemap_queue and len(visited_sitemaps) < MAX_SITEMAP_FILES:
+        sitemap_url = sitemap_queue.pop(0)
+        if sitemap_url in visited_sitemaps or _site_host(sitemap_url) != host:
+            continue
+        visited_sitemaps.add(sitemap_url)
+        try:
+            resource = _fetch_text_resource(sitemap_url)
+            page_urls, child_sitemaps = _parse_sitemap_document(resource["text"])
+            same_domain_pages = [url for url in page_urls if _site_host(url) == host]
+            sitemap_urls.update(same_domain_pages)
+            sitemap_files.append(
+                {
+                    "url": resource["final_url"],
+                    "http_status": resource["http_status"],
+                    "valid": True,
+                    "page_urls": len(page_urls),
+                    "child_sitemaps": len(child_sitemaps),
+                    "error": "",
+                }
+            )
+            for child_url in child_sitemaps:
+                if _site_host(child_url) == host and child_url not in visited_sitemaps:
+                    sitemap_queue.append(child_url)
+        except (*AUDIT_ERRORS, ET.ParseError) as error:
+            sitemap_files.append(
+                {
+                    "url": sitemap_url,
+                    "http_status": None,
+                    "valid": False,
+                    "page_urls": 0,
+                    "child_sitemaps": 0,
+                    "error": str(error),
+                }
+            )
+
+    valid_sitemaps = [item for item in sitemap_files if item["valid"]]
+    sitemap_report: dict[str, Any] = {
+        "files_checked": sitemap_files,
+        "valid_files": len(valid_sitemaps),
+        "urls_found": len(sitemap_urls),
+        "same_domain_urls": len(sitemap_urls),
+        "audited_indexable_pages": 0,
+        "audited_pages_covered": 0,
+        "missing_audited_pages": [],
+    }
+    if not valid_sitemaps:
+        failed_sitemap_url = (
+            sitemap_files[0]["url"]
+            if sitemap_files
+            else urljoin(root, "sitemap.xml")
+        )
+        issues.append(
+            _site_issue(
+                failed_sitemap_url,
+                "XML sitemap is accessible and valid",
+                "No valid same-domain sitemap was found within the file limit.",
+                "medium",
+                "Publish a valid XML sitemap and reference it from robots.txt.",
+            )
+        )
+    else:
+        indexable_types = {
+            "homepage",
+            "product_index",
+            "product_detail",
+            "about",
+            "b2b_service",
+        }
+        indexable_pages = [
+            report["page"]["final_url"]
+            for report in page_reports
+            if report["page_type"] in indexable_types
+        ]
+        sitemap_identities = {_url_identity(url) for url in sitemap_urls}
+        missing_pages = [
+            url for url in indexable_pages if _url_identity(url) not in sitemap_identities
+        ]
+        sitemap_report.update(
+            {
+                "audited_indexable_pages": len(indexable_pages),
+                "audited_pages_covered": len(indexable_pages) - len(missing_pages),
+                "missing_audited_pages": missing_pages,
+            }
+        )
+        if missing_pages:
+            issues.append(
+                _site_issue(
+                    valid_sitemaps[0]["url"],
+                    "Audited indexable pages are represented in the sitemap",
+                    f"{len(missing_pages)} audited indexable page(s) were not found in the checked sitemap files.",
+                    "low",
+                    "Add intended indexable pages to the XML sitemap or document why they should be excluded.",
+                )
+            )
+
+    canonical_pages = [
+        {
+            "url": report["page"]["final_url"],
+            "canonical": report["page"]["canonical"],
+        }
+        for report in page_reports
+        if report["page"]["canonical"]
+    ]
+    canonical_hosts = sorted(
+        {urlparse(item["canonical"]).hostname or "" for item in canonical_pages}
+    )
+    host_mismatches = [
+        item
+        for item in canonical_pages
+        if (urlparse(item["url"]).hostname or "").lower()
+        != (urlparse(item["canonical"]).hostname or "").lower()
+    ]
+    canonical_report = {
+        "canonical_pages": len(canonical_pages),
+        "canonical_hosts": canonical_hosts,
+        "served_to_canonical_host_mismatches": host_mismatches,
+    }
+    if len(canonical_hosts) > 1:
+        issues.append(
+            _site_issue(
+                root_url,
+                "Canonical hostname is consistent",
+                f"Multiple canonical hostnames found: {', '.join(canonical_hosts)}.",
+                "medium",
+                "Choose one preferred hostname and use it consistently in canonical links.",
+            )
+        )
+    if host_mismatches:
+        issues.append(
+            _site_issue(
+                root_url,
+                "Served and canonical hostnames are aligned",
+                f"{len(host_mismatches)} audited page(s) use a canonical hostname different from the served hostname.",
+                "low",
+                "Verify redirects, internal links, sitemap URLs, and canonicals all use the chosen preferred hostname.",
+            )
+        )
+
+    return (
+        {
+            "robots": robots_report,
+            "sitemap": sitemap_report,
+            "canonical_consistency": canonical_report,
+        },
+        issues,
+    )
 
 
 def audit_site(url: str, max_pages: int = 8) -> dict[str, Any]:
@@ -714,6 +1135,10 @@ def audit_site(url: str, max_pages: int = 8) -> dict[str, Any]:
         for check in section["checks"]
         if check["status"] == "warning"
     ]
+    technical_seo, technical_issues = _audit_technical_seo(
+        normalized_url, successful_pages
+    )
+    prioritized_issues.extend(technical_issues)
     priority_order = {"P1": 0, "P2": 1, "P3": 2}
     prioritized_issues.sort(
         key=lambda issue: (
@@ -763,6 +1188,7 @@ def audit_site(url: str, max_pages: int = 8) -> dict[str, Any]:
             "page_types": page_type_counts,
         },
         "pages": page_reports,
+        "technical_seo": technical_seo,
         "prioritized_issues": prioritized_issues,
         "errors": errors,
     }

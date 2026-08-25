@@ -13,7 +13,7 @@ class AuditWorkflowTests(unittest.TestCase):
     @patch("workflow.main.audit_site")
     def test_run_audit_saves_json_report(self, audit_site) -> None:
         audit_site.return_value = {
-            "agent_version": "0.3",
+            "agent_version": "0.4",
             "summary": {
                 "status": "pass",
                 "pages_audited": 1,
@@ -30,7 +30,7 @@ class AuditWorkflowTests(unittest.TestCase):
             )
             saved_report = json.loads(result_path.read_text(encoding="utf-8"))
 
-        self.assertEqual(saved_report["agent_version"], "0.3")
+        self.assertEqual(saved_report["agent_version"], "0.4")
         self.assertEqual(saved_report["summary"]["status"], "pass")
         audit_site.assert_called_once_with("https://example.com", max_pages=1)
 

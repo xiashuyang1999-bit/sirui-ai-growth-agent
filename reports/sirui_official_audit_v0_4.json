@@ -1,0 +1,1326 @@
+{
+  "agent_version": "0.4",
+  "requested_url": "https://www.siruitool.com/",
+  "audited_at": "2026-08-25T10:25:20.680132+00:00",
+  "crawl": {
+    "same_domain_only": true,
+    "max_pages": 8,
+    "urls_discovered": 14
+  },
+  "summary": {
+    "status": "needs_review",
+    "pages_audited": 8,
+    "pages_failed": 0,
+    "checks_passed": 82,
+    "checks_total": 87,
+    "issue_count": 6,
+    "issues_by_severity": {
+      "high": 0,
+      "medium": 5,
+      "low": 1
+    },
+    "page_types": {
+      "homepage": 1,
+      "product_index": 1,
+      "product_detail": 3,
+      "about": 1,
+      "b2b_service": 1,
+      "contact": 1
+    }
+  },
+  "pages": [
+    {
+      "requested_url": "https://www.siruitool.com/",
+      "audited_at": "2026-08-25T10:25:20.680132+00:00",
+      "page_type": "homepage",
+      "page": {
+        "final_url": "https://www.siruitool.com/",
+        "http_status": 200,
+        "title": "Paint Brush & Paint Roller Manufacturer in China | SIRUI",
+        "meta_description": "OEM paint brush and paint roller manufacturing for importers, distributors, and private-label sourcing programs.",
+        "h1": [
+          "Paint Brush & Paint Roller Manufacturer in China"
+        ],
+        "forms": 0,
+        "canonical": "https://siruitool.com/?lang=en",
+        "schema_types": [],
+        "json_ld_blocks": 0,
+        "invalid_json_ld_blocks": 0
+      },
+      "summary": {
+        "status": "needs_review",
+        "checks_passed": 13,
+        "checks_total": 14,
+        "issue_count": 1,
+        "issues_by_severity": {
+          "high": 0,
+          "medium": 1,
+          "low": 0
+        }
+      },
+      "sections": {
+        "positioning": {
+          "status": "pass",
+          "checks": [
+            {
+              "name": "Clear manufacturer positioning",
+              "status": "pass",
+              "evidence": "Signals found: manufacturer",
+              "severity": null,
+              "priority": null,
+              "recommendation": null
+            },
+            {
+              "name": "Core product categories are stated",
+              "status": "pass",
+              "evidence": "Product terms found: paint brush, paint roller",
+              "severity": null,
+              "priority": null,
+              "recommendation": null
+            },
+            {
+              "name": "Single focused H1",
+              "status": "pass",
+              "evidence": "Found 1 H1 heading(s).",
+              "severity": null,
+              "priority": null,
+              "recommendation": null
+            }
+          ]
+        },
+        "seo_basics": {
+          "status": "pass",
+          "checks": [
+            {
+              "name": "Page title present",
+              "status": "pass",
+              "evidence": "Paint Brush & Paint Roller Manufacturer in China | SIRUI",
+              "severity": null,
+              "priority": null,
+              "recommendation": null
+            },
+            {
+              "name": "Meta description present",
+              "status": "pass",
+              "evidence": "OEM paint brush and paint roller manufacturing for importers, distributors, and private-label sourcing programs.",
+              "severity": null,
+              "priority": null,
+              "recommendation": null
+            },
+            {
+              "name": "Canonical URL present",
+              "status": "pass",
+              "evidence": "https://siruitool.com/?lang=en",
+              "severity": null,
+              "priority": null,
+              "recommendation": null
+            },
+            {
+              "name": "HTML language declared",
+              "status": "pass",
+              "evidence": "en",
+              "severity": null,
+              "priority": null,
+              "recommendation": null
+            }
+          ]
+        },
+        "product_structure": {
+          "status": "pass",
+          "checks": [
+            {
+              "name": "Product navigation is discoverable",
+              "status": "pass",
+              "evidence": "Found 13 product-related link(s).",
+              "severity": null,
+              "priority": null,
+              "recommendation": null
+            },
+            {
+              "name": "Multiple product paths are available",
+              "status": "pass",
+              "evidence": "Found 13 product-related link(s); target is at least 3.",
+              "severity": null,
+              "priority": null,
+              "recommendation": null
+            }
+          ]
+        },
+        "b2b_conversion_elements": {
+          "status": "pass",
+          "checks": [
+            {
+              "name": "B2B offer is visible",
+              "status": "pass",
+              "evidence": "Signals found: oem, odm, private label, wholesale, distributor, bulk",
+              "severity": null,
+              "priority": null,
+              "recommendation": null
+            },
+            {
+              "name": "Conversion action is visible",
+              "status": "pass",
+              "evidence": "Calls to action found: send inquiry; forms: 0.",
+              "severity": null,
+              "priority": null,
+              "recommendation": null
+            },
+            {
+              "name": "Direct contact route is available",
+              "status": "pass",
+              "evidence": "Found 5 email, phone, or WhatsApp link(s) and 0 form(s).",
+              "severity": null,
+              "priority": null,
+              "recommendation": null
+            }
+          ]
+        },
+        "technical_basics": {
+          "status": "needs_review",
+          "checks": [
+            {
+              "name": "Successful HTTP response",
+              "status": "pass",
+              "evidence": "HTTP status: 200.",
+              "severity": null,
+              "priority": null,
+              "recommendation": null
+            },
+            {
+              "name": "Relevant structured data is present",
+              "status": "warning",
+              "evidence": "No JSON-LD schema types found.",
+              "severity": "medium",
+              "priority": "P2",
+              "recommendation": "Add valid Organization or WebSite JSON-LD for this page type."
+            }
+          ]
+        }
+      },
+      "errors": []
+    },
+    {
+      "requested_url": "https://www.siruitool.com/products",
+      "audited_at": "2026-08-25T10:25:20.680132+00:00",
+      "page_type": "product_index",
+      "page": {
+        "final_url": "https://www.siruitool.com/products",
+        "http_status": 200,
+        "title": "Paint Brush & Paint Roller Manufacturer | SIRUI",
+        "meta_description": "Wholesale paint brushes and paint rollers for OEM, private-label, distributor, and professional sourcing programs.",
+        "h1": [
+          "Paint Brushes & Paint Rollers"
+        ],
+        "forms": 0,
+        "canonical": "https://siruitool.com/products?lang=en",
+        "schema_types": [],
+        "json_ld_blocks": 0,
+        "invalid_json_ld_blocks": 0
+      },
+      "summary": {
+        "status": "pass",
+        "checks_passed": 11,
+        "checks_total": 11,
+        "issue_count": 0,
+        "issues_by_severity": {
+          "high": 0,
+          "medium": 0,
+          "low": 0
+        }
+      },
+      "sections": {
+        "positioning": {
+          "status": "pass",
+          "checks": [
+            {
+              "name": "Product category purpose is clear",
+              "status": "pass",
+              "evidence": "Product terms found: paint brush, paint brushes, paint roller, paint rollers",
+              "severity": null,
+              "priority": null,
+              "recommendation": null
+            },
+            {
+              "name": "Single focused H1",
+              "status": "pass",
+              "evidence": "Found 1 H1 heading(s).",
+              "severity": null,
+              "priority": null,
+              "recommendation": null
+            }
+          ]
+        },
+        "seo_basics": {
+          "status": "pass",
+          "checks": [
+            {
+              "name": "Page title present",
+              "status": "pass",
+              "evidence": "Paint Brush & Paint Roller Manufacturer | SIRUI",
+              "severity": null,
+              "priority": null,
+              "recommendation": null
+            },
+            {
+              "name": "Meta description present",
+              "status": "pass",
+              "evidence": "Wholesale paint brushes and paint rollers for OEM, private-label, distributor, and professional sourcing programs.",
+              "severity": null,
+              "priority": null,
+              "recommendation": null
+            },
+            {
+              "name": "Canonical URL present",
+              "status": "pass",
+              "evidence": "https://siruitool.com/products?lang=en",
+              "severity": null,
+              "priority": null,
+              "recommendation": null
+            },
+            {
+              "name": "HTML language declared",
+              "status": "pass",
+              "evidence": "en",
+              "severity": null,
+              "priority": null,
+              "recommendation": null
+            }
+          ]
+        },
+        "product_structure": {
+          "status": "pass",
+          "checks": [
+            {
+              "name": "Product range is discoverable",
+              "status": "pass",
+              "evidence": "Found 22 product-related link(s); target is at least 3.",
+              "severity": null,
+              "priority": null,
+              "recommendation": null
+            }
+          ]
+        },
+        "b2b_conversion_elements": {
+          "status": "pass",
+          "checks": [
+            {
+              "name": "B2B offer is visible",
+              "status": "pass",
+              "evidence": "Signals found: oem, odm, wholesale",
+              "severity": null,
+              "priority": null,
+              "recommendation": null
+            },
+            {
+              "name": "Conversion action is visible",
+              "status": "pass",
+              "evidence": "Calls to action found: send inquiry; forms: 0.",
+              "severity": null,
+              "priority": null,
+              "recommendation": null
+            },
+            {
+              "name": "Direct contact route is available",
+              "status": "pass",
+              "evidence": "Found 5 email, phone, or WhatsApp link(s) and 0 form(s).",
+              "severity": null,
+              "priority": null,
+              "recommendation": null
+            }
+          ]
+        },
+        "technical_basics": {
+          "status": "pass",
+          "checks": [
+            {
+              "name": "Successful HTTP response",
+              "status": "pass",
+              "evidence": "HTTP status: 200.",
+              "severity": null,
+              "priority": null,
+              "recommendation": null
+            }
+          ]
+        }
+      },
+      "errors": []
+    },
+    {
+      "requested_url": "https://www.siruitool.com/products/angled-sash-paint-brush-50mm",
+      "audited_at": "2026-08-25T10:25:20.680132+00:00",
+      "page_type": "product_detail",
+      "page": {
+        "final_url": "https://www.siruitool.com/products/angled-sash-paint-brush-50mm",
+        "http_status": 200,
+        "title": "50mm Angled Sash Paint Brush | PB-ANGLE-050",
+        "meta_description": "Angled sash brush for precision cutting-in, with tapered synthetic filaments and customizable handle colors for private-label ranges.",
+        "h1": [
+          "50mm Angled Sash Paint Brush"
+        ],
+        "forms": 1,
+        "canonical": "https://siruitool.com/products/angled-sash-paint-brush-50mm?lang=en",
+        "schema_types": [],
+        "json_ld_blocks": 0,
+        "invalid_json_ld_blocks": 0
+      },
+      "summary": {
+        "status": "needs_review",
+        "checks_passed": 10,
+        "checks_total": 11,
+        "issue_count": 1,
+        "issues_by_severity": {
+          "high": 0,
+          "medium": 1,
+          "low": 0
+        }
+      },
+      "sections": {
+        "positioning": {
+          "status": "pass",
+          "checks": [
+            {
+              "name": "Product identity is present",
+              "status": "pass",
+              "evidence": "Title: 50mm Angled Sash Paint Brush | PB-ANGLE-050; H1 count: 1.",
+              "severity": null,
+              "priority": null,
+              "recommendation": null
+            },
+            {
+              "name": "Product title and H1 are aligned",
+              "status": "pass",
+              "evidence": "The title and H1 share the product's key terms.",
+              "severity": null,
+              "priority": null,
+              "recommendation": null
+            }
+          ]
+        },
+        "seo_basics": {
+          "status": "pass",
+          "checks": [
+            {
+              "name": "Page title present",
+              "status": "pass",
+              "evidence": "50mm Angled Sash Paint Brush | PB-ANGLE-050",
+              "severity": null,
+              "priority": null,
+              "recommendation": null
+            },
+            {
+              "name": "Meta description present",
+              "status": "pass",
+              "evidence": "Angled sash brush for precision cutting-in, with tapered synthetic filaments and customizable handle colors for private-label ranges.",
+              "severity": null,
+              "priority": null,
+              "recommendation": null
+            },
+            {
+              "name": "Canonical URL present",
+              "status": "pass",
+              "evidence": "https://siruitool.com/products/angled-sash-paint-brush-50mm?lang=en",
+              "severity": null,
+              "priority": null,
+              "recommendation": null
+            },
+            {
+              "name": "HTML language declared",
+              "status": "pass",
+              "evidence": "en",
+              "severity": null,
+              "priority": null,
+              "recommendation": null
+            }
+          ]
+        },
+        "product_structure": {
+          "status": "pass",
+          "checks": [
+            {
+              "name": "Related product path is available",
+              "status": "pass",
+              "evidence": "Found 10 product-related link(s).",
+              "severity": null,
+              "priority": null,
+              "recommendation": null
+            }
+          ]
+        },
+        "b2b_conversion_elements": {
+          "status": "pass",
+          "checks": [
+            {
+              "name": "Conversion action is visible",
+              "status": "pass",
+              "evidence": "Calls to action found: request a quote; forms: 1.",
+              "severity": null,
+              "priority": null,
+              "recommendation": null
+            },
+            {
+              "name": "Direct contact route is available",
+              "status": "pass",
+              "evidence": "Found 3 email, phone, or WhatsApp link(s) and 1 form(s).",
+              "severity": null,
+              "priority": null,
+              "recommendation": null
+            }
+          ]
+        },
+        "technical_basics": {
+          "status": "needs_review",
+          "checks": [
+            {
+              "name": "Successful HTTP response",
+              "status": "pass",
+              "evidence": "HTTP status: 200.",
+              "severity": null,
+              "priority": null,
+              "recommendation": null
+            },
+            {
+              "name": "Relevant structured data is present",
+              "status": "warning",
+              "evidence": "No JSON-LD schema types found.",
+              "severity": "medium",
+              "priority": "P2",
+              "recommendation": "Add valid Product JSON-LD for this page type."
+            }
+          ]
+        }
+      },
+      "errors": []
+    },
+    {
+      "requested_url": "https://www.siruitool.com/products/flat-wall-paint-brush-25mm",
+      "audited_at": "2026-08-25T10:25:20.680132+00:00",
+      "page_type": "product_detail",
+      "page": {
+        "final_url": "https://www.siruitool.com/products/flat-wall-paint-brush-25mm",
+        "http_status": 200,
+        "title": "25mm Flat Wall Paint Brush | PB-FLAT-025",
+        "meta_description": "Economical flat paint brush with dense PET/PBT bristles, stainless ferrule, and smooth beech handle for contractor and retail programs.",
+        "h1": [
+          "25mm Flat Wall Paint Brush"
+        ],
+        "forms": 1,
+        "canonical": "https://siruitool.com/products/flat-wall-paint-brush-25mm?lang=en",
+        "schema_types": [],
+        "json_ld_blocks": 0,
+        "invalid_json_ld_blocks": 0
+      },
+      "summary": {
+        "status": "needs_review",
+        "checks_passed": 10,
+        "checks_total": 11,
+        "issue_count": 1,
+        "issues_by_severity": {
+          "high": 0,
+          "medium": 1,
+          "low": 0
+        }
+      },
+      "sections": {
+        "positioning": {
+          "status": "pass",
+          "checks": [
+            {
+              "name": "Product identity is present",
+              "status": "pass",
+              "evidence": "Title: 25mm Flat Wall Paint Brush | PB-FLAT-025; H1 count: 1.",
+              "severity": null,
+              "priority": null,
+              "recommendation": null
+            },
+            {
+              "name": "Product title and H1 are aligned",
+              "status": "pass",
+              "evidence": "The title and H1 share the product's key terms.",
+              "severity": null,
+              "priority": null,
+              "recommendation": null
+            }
+          ]
+        },
+        "seo_basics": {
+          "status": "pass",
+          "checks": [
+            {
+              "name": "Page title present",
+              "status": "pass",
+              "evidence": "25mm Flat Wall Paint Brush | PB-FLAT-025",
+              "severity": null,
+              "priority": null,
+              "recommendation": null
+            },
+            {
+              "name": "Meta description present",
+              "status": "pass",
+              "evidence": "Economical flat paint brush with dense PET/PBT bristles, stainless ferrule, and smooth beech handle for contractor and retail programs.",
+              "severity": null,
+              "priority": null,
+              "recommendation": null
+            },
+            {
+              "name": "Canonical URL present",
+              "status": "pass",
+              "evidence": "https://siruitool.com/products/flat-wall-paint-brush-25mm?lang=en",
+              "severity": null,
+              "priority": null,
+              "recommendation": null
+            },
+            {
+              "name": "HTML language declared",
+              "status": "pass",
+              "evidence": "en",
+              "severity": null,
+              "priority": null,
+              "recommendation": null
+            }
+          ]
+        },
+        "product_structure": {
+          "status": "pass",
+          "checks": [
+            {
+              "name": "Related product path is available",
+              "status": "pass",
+              "evidence": "Found 10 product-related link(s).",
+              "severity": null,
+              "priority": null,
+              "recommendation": null
+            }
+          ]
+        },
+        "b2b_conversion_elements": {
+          "status": "pass",
+          "checks": [
+            {
+              "name": "Conversion action is visible",
+              "status": "pass",
+              "evidence": "Calls to action found: request a quote; forms: 1.",
+              "severity": null,
+              "priority": null,
+              "recommendation": null
+            },
+            {
+              "name": "Direct contact route is available",
+              "status": "pass",
+              "evidence": "Found 3 email, phone, or WhatsApp link(s) and 1 form(s).",
+              "severity": null,
+              "priority": null,
+              "recommendation": null
+            }
+          ]
+        },
+        "technical_basics": {
+          "status": "needs_review",
+          "checks": [
+            {
+              "name": "Successful HTTP response",
+              "status": "pass",
+              "evidence": "HTTP status: 200.",
+              "severity": null,
+              "priority": null,
+              "recommendation": null
+            },
+            {
+              "name": "Relevant structured data is present",
+              "status": "warning",
+              "evidence": "No JSON-LD schema types found.",
+              "severity": "medium",
+              "priority": "P2",
+              "recommendation": "Add valid Product JSON-LD for this page type."
+            }
+          ]
+        }
+      },
+      "errors": []
+    },
+    {
+      "requested_url": "https://www.siruitool.com/products/microfiber-paint-roller-kit",
+      "audited_at": "2026-08-25T10:25:20.680132+00:00",
+      "page_type": "product_detail",
+      "page": {
+        "final_url": "https://www.siruitool.com/products/microfiber-paint-roller-kit",
+        "http_status": 200,
+        "title": "Microfiber Paint Roller Kit | PB-ROLLER-009",
+        "meta_description": "Paint roller kit with microfiber sleeve, steel frame, and optional tray, ready for retail DIY and contractor channels.",
+        "h1": [
+          "Microfiber Paint Roller Kit"
+        ],
+        "forms": 1,
+        "canonical": "https://siruitool.com/products/microfiber-paint-roller-kit?lang=en",
+        "schema_types": [],
+        "json_ld_blocks": 0,
+        "invalid_json_ld_blocks": 0
+      },
+      "summary": {
+        "status": "needs_review",
+        "checks_passed": 10,
+        "checks_total": 11,
+        "issue_count": 1,
+        "issues_by_severity": {
+          "high": 0,
+          "medium": 1,
+          "low": 0
+        }
+      },
+      "sections": {
+        "positioning": {
+          "status": "pass",
+          "checks": [
+            {
+              "name": "Product identity is present",
+              "status": "pass",
+              "evidence": "Title: Microfiber Paint Roller Kit | PB-ROLLER-009; H1 count: 1.",
+              "severity": null,
+              "priority": null,
+              "recommendation": null
+            },
+            {
+              "name": "Product title and H1 are aligned",
+              "status": "pass",
+              "evidence": "The title and H1 share the product's key terms.",
+              "severity": null,
+              "priority": null,
+              "recommendation": null
+            }
+          ]
+        },
+        "seo_basics": {
+          "status": "pass",
+          "checks": [
+            {
+              "name": "Page title present",
+              "status": "pass",
+              "evidence": "Microfiber Paint Roller Kit | PB-ROLLER-009",
+              "severity": null,
+              "priority": null,
+              "recommendation": null
+            },
+            {
+              "name": "Meta description present",
+              "status": "pass",
+              "evidence": "Paint roller kit with microfiber sleeve, steel frame, and optional tray, ready for retail DIY and contractor channels.",
+              "severity": null,
+              "priority": null,
+              "recommendation": null
+            },
+            {
+              "name": "Canonical URL present",
+              "status": "pass",
+              "evidence": "https://siruitool.com/products/microfiber-paint-roller-kit?lang=en",
+              "severity": null,
+              "priority": null,
+              "recommendation": null
+            },
+            {
+              "name": "HTML language declared",
+              "status": "pass",
+              "evidence": "en",
+              "severity": null,
+              "priority": null,
+              "recommendation": null
+            }
+          ]
+        },
+        "product_structure": {
+          "status": "pass",
+          "checks": [
+            {
+              "name": "Related product path is available",
+              "status": "pass",
+              "evidence": "Found 10 product-related link(s).",
+              "severity": null,
+              "priority": null,
+              "recommendation": null
+            }
+          ]
+        },
+        "b2b_conversion_elements": {
+          "status": "pass",
+          "checks": [
+            {
+              "name": "Conversion action is visible",
+              "status": "pass",
+              "evidence": "Calls to action found: request a quote; forms: 1.",
+              "severity": null,
+              "priority": null,
+              "recommendation": null
+            },
+            {
+              "name": "Direct contact route is available",
+              "status": "pass",
+              "evidence": "Found 3 email, phone, or WhatsApp link(s) and 1 form(s).",
+              "severity": null,
+              "priority": null,
+              "recommendation": null
+            }
+          ]
+        },
+        "technical_basics": {
+          "status": "needs_review",
+          "checks": [
+            {
+              "name": "Successful HTTP response",
+              "status": "pass",
+              "evidence": "HTTP status: 200.",
+              "severity": null,
+              "priority": null,
+              "recommendation": null
+            },
+            {
+              "name": "Relevant structured data is present",
+              "status": "warning",
+              "evidence": "No JSON-LD schema types found.",
+              "severity": "medium",
+              "priority": "P2",
+              "recommendation": "Add valid Product JSON-LD for this page type."
+            }
+          ]
+        }
+      },
+      "errors": []
+    },
+    {
+      "requested_url": "https://www.siruitool.com/factory",
+      "audited_at": "2026-08-25T10:25:20.680132+00:00",
+      "page_type": "about",
+      "page": {
+        "final_url": "https://www.siruitool.com/factory",
+        "http_status": 200,
+        "title": "Factory | Paint Brush & Paint Roller Manufacturer",
+        "meta_description": "Review a practical production coordination workflow for paint brush and paint roller sourcing, samples, materials and packaging.",
+        "h1": [
+          "Factory"
+        ],
+        "forms": 0,
+        "canonical": "https://siruitool.com/factory?lang=en",
+        "schema_types": [],
+        "json_ld_blocks": 0,
+        "invalid_json_ld_blocks": 0
+      },
+      "summary": {
+        "status": "pass",
+        "checks_passed": 9,
+        "checks_total": 9,
+        "issue_count": 0,
+        "issues_by_severity": {
+          "high": 0,
+          "medium": 0,
+          "low": 0
+        }
+      },
+      "sections": {
+        "positioning": {
+          "status": "pass",
+          "checks": [
+            {
+              "name": "Factory purpose is clear",
+              "status": "pass",
+              "evidence": "Factory signals found: factory, manufacturer, production, quality control",
+              "severity": null,
+              "priority": null,
+              "recommendation": null
+            },
+            {
+              "name": "Single focused H1",
+              "status": "pass",
+              "evidence": "Found 1 H1 heading(s).",
+              "severity": null,
+              "priority": null,
+              "recommendation": null
+            }
+          ]
+        },
+        "seo_basics": {
+          "status": "pass",
+          "checks": [
+            {
+              "name": "Page title present",
+              "status": "pass",
+              "evidence": "Factory | Paint Brush & Paint Roller Manufacturer",
+              "severity": null,
+              "priority": null,
+              "recommendation": null
+            },
+            {
+              "name": "Meta description present",
+              "status": "pass",
+              "evidence": "Review a practical production coordination workflow for paint brush and paint roller sourcing, samples, materials and packaging.",
+              "severity": null,
+              "priority": null,
+              "recommendation": null
+            },
+            {
+              "name": "Canonical URL present",
+              "status": "pass",
+              "evidence": "https://siruitool.com/factory?lang=en",
+              "severity": null,
+              "priority": null,
+              "recommendation": null
+            },
+            {
+              "name": "HTML language declared",
+              "status": "pass",
+              "evidence": "en",
+              "severity": null,
+              "priority": null,
+              "recommendation": null
+            }
+          ]
+        },
+        "product_structure": {
+          "status": "not_applicable",
+          "checks": []
+        },
+        "b2b_conversion_elements": {
+          "status": "pass",
+          "checks": [
+            {
+              "name": "Conversion action is visible",
+              "status": "pass",
+              "evidence": "Calls to action found: request a quote; forms: 0.",
+              "severity": null,
+              "priority": null,
+              "recommendation": null
+            },
+            {
+              "name": "Direct contact route is available",
+              "status": "pass",
+              "evidence": "Found 2 email, phone, or WhatsApp link(s) and 0 form(s).",
+              "severity": null,
+              "priority": null,
+              "recommendation": null
+            }
+          ]
+        },
+        "technical_basics": {
+          "status": "pass",
+          "checks": [
+            {
+              "name": "Successful HTTP response",
+              "status": "pass",
+              "evidence": "HTTP status: 200.",
+              "severity": null,
+              "priority": null,
+              "recommendation": null
+            }
+          ]
+        }
+      },
+      "errors": []
+    },
+    {
+      "requested_url": "https://www.siruitool.com/oem-odm",
+      "audited_at": "2026-08-25T10:25:20.680132+00:00",
+      "page_type": "b2b_service",
+      "page": {
+        "final_url": "https://www.siruitool.com/oem-odm",
+        "http_status": 200,
+        "title": "OEM & Private Label Paint Brushes and Rollers | SIRUI",
+        "meta_description": "Discuss OEM, ODM and private-label paint brush and paint roller projects for import, distribution and branded sourcing.",
+        "h1": [
+          "OEM & Private Label Paint Brushes and Rollers"
+        ],
+        "forms": 0,
+        "canonical": "https://siruitool.com/oem-odm?lang=en",
+        "schema_types": [],
+        "json_ld_blocks": 0,
+        "invalid_json_ld_blocks": 0
+      },
+      "summary": {
+        "status": "pass",
+        "checks_passed": 11,
+        "checks_total": 11,
+        "issue_count": 0,
+        "issues_by_severity": {
+          "high": 0,
+          "medium": 0,
+          "low": 0
+        }
+      },
+      "sections": {
+        "positioning": {
+          "status": "pass",
+          "checks": [
+            {
+              "name": "OEM/private-label purpose is clear",
+              "status": "pass",
+              "evidence": "Service signals found: oem, private label",
+              "severity": null,
+              "priority": null,
+              "recommendation": null
+            },
+            {
+              "name": "Relevant product categories are stated",
+              "status": "pass",
+              "evidence": "Product terms found: paint brush, paint brushes",
+              "severity": null,
+              "priority": null,
+              "recommendation": null
+            },
+            {
+              "name": "Single focused H1",
+              "status": "pass",
+              "evidence": "Found 1 H1 heading(s).",
+              "severity": null,
+              "priority": null,
+              "recommendation": null
+            }
+          ]
+        },
+        "seo_basics": {
+          "status": "pass",
+          "checks": [
+            {
+              "name": "Page title present",
+              "status": "pass",
+              "evidence": "OEM & Private Label Paint Brushes and Rollers | SIRUI",
+              "severity": null,
+              "priority": null,
+              "recommendation": null
+            },
+            {
+              "name": "Meta description present",
+              "status": "pass",
+              "evidence": "Discuss OEM, ODM and private-label paint brush and paint roller projects for import, distribution and branded sourcing.",
+              "severity": null,
+              "priority": null,
+              "recommendation": null
+            },
+            {
+              "name": "Canonical URL present",
+              "status": "pass",
+              "evidence": "https://siruitool.com/oem-odm?lang=en",
+              "severity": null,
+              "priority": null,
+              "recommendation": null
+            },
+            {
+              "name": "HTML language declared",
+              "status": "pass",
+              "evidence": "en",
+              "severity": null,
+              "priority": null,
+              "recommendation": null
+            }
+          ]
+        },
+        "product_structure": {
+          "status": "not_applicable",
+          "checks": []
+        },
+        "b2b_conversion_elements": {
+          "status": "pass",
+          "checks": [
+            {
+              "name": "B2B offer is visible",
+              "status": "pass",
+              "evidence": "Signals found: oem, odm, private label, distributor",
+              "severity": null,
+              "priority": null,
+              "recommendation": null
+            },
+            {
+              "name": "Conversion action is visible",
+              "status": "pass",
+              "evidence": "Calls to action found: request a quote, get a quote; forms: 0.",
+              "severity": null,
+              "priority": null,
+              "recommendation": null
+            },
+            {
+              "name": "Direct contact route is available",
+              "status": "pass",
+              "evidence": "Found 3 email, phone, or WhatsApp link(s) and 0 form(s).",
+              "severity": null,
+              "priority": null,
+              "recommendation": null
+            }
+          ]
+        },
+        "technical_basics": {
+          "status": "pass",
+          "checks": [
+            {
+              "name": "Successful HTTP response",
+              "status": "pass",
+              "evidence": "HTTP status: 200.",
+              "severity": null,
+              "priority": null,
+              "recommendation": null
+            }
+          ]
+        }
+      },
+      "errors": []
+    },
+    {
+      "requested_url": "https://www.siruitool.com/inquiry",
+      "audited_at": "2026-08-25T10:25:20.680132+00:00",
+      "page_type": "contact",
+      "page": {
+        "final_url": "https://www.siruitool.com/inquiry",
+        "http_status": 200,
+        "title": "Inquiry List | SIRUI INTERNATIONAL TRADE ZHENJIANG CO., LTD.",
+        "meta_description": "Submit single-product or multi-product brush inquiries without checkout or online payment.",
+        "h1": [
+          "Send product inquiry"
+        ],
+        "forms": 1,
+        "canonical": "",
+        "schema_types": [],
+        "json_ld_blocks": 0,
+        "invalid_json_ld_blocks": 0
+      },
+      "summary": {
+        "status": "needs_review",
+        "checks_passed": 8,
+        "checks_total": 9,
+        "issue_count": 1,
+        "issues_by_severity": {
+          "high": 0,
+          "medium": 1,
+          "low": 0
+        }
+      },
+      "sections": {
+        "positioning": {
+          "status": "pass",
+          "checks": [
+            {
+              "name": "Inquiry purpose is clear",
+              "status": "pass",
+              "evidence": "Inquiry signals found: inquiry",
+              "severity": null,
+              "priority": null,
+              "recommendation": null
+            },
+            {
+              "name": "Single focused H1",
+              "status": "pass",
+              "evidence": "Found 1 H1 heading(s).",
+              "severity": null,
+              "priority": null,
+              "recommendation": null
+            }
+          ]
+        },
+        "seo_basics": {
+          "status": "needs_review",
+          "checks": [
+            {
+              "name": "Page title present",
+              "status": "pass",
+              "evidence": "Inquiry List | SIRUI INTERNATIONAL TRADE ZHENJIANG CO., LTD.",
+              "severity": null,
+              "priority": null,
+              "recommendation": null
+            },
+            {
+              "name": "Meta description present",
+              "status": "pass",
+              "evidence": "Submit single-product or multi-product brush inquiries without checkout or online payment.",
+              "severity": null,
+              "priority": null,
+              "recommendation": null
+            },
+            {
+              "name": "Canonical URL present",
+              "status": "warning",
+              "evidence": "No canonical link found.",
+              "severity": "medium",
+              "priority": "P2",
+              "recommendation": "Add a self-referencing canonical that follows the site's chosen hostname and language convention."
+            },
+            {
+              "name": "HTML language declared",
+              "status": "pass",
+              "evidence": "en",
+              "severity": null,
+              "priority": null,
+              "recommendation": null
+            }
+          ]
+        },
+        "product_structure": {
+          "status": "not_applicable",
+          "checks": []
+        },
+        "b2b_conversion_elements": {
+          "status": "pass",
+          "checks": [
+            {
+              "name": "Conversion action is visible",
+              "status": "pass",
+              "evidence": "Calls to action found: request a quote; forms: 1.",
+              "severity": null,
+              "priority": null,
+              "recommendation": null
+            },
+            {
+              "name": "Direct contact route is available",
+              "status": "pass",
+              "evidence": "Found 2 email, phone, or WhatsApp link(s) and 1 form(s).",
+              "severity": null,
+              "priority": null,
+              "recommendation": null
+            }
+          ]
+        },
+        "technical_basics": {
+          "status": "pass",
+          "checks": [
+            {
+              "name": "Successful HTTP response",
+              "status": "pass",
+              "evidence": "HTTP status: 200.",
+              "severity": null,
+              "priority": null,
+              "recommendation": null
+            }
+          ]
+        }
+      },
+      "errors": []
+    }
+  ],
+  "technical_seo": {
+    "robots": {
+      "url": "https://www.siruitool.com/robots.txt",
+      "accessible": true,
+      "http_status": 200,
+      "has_user_agent": true,
+      "blocks_all_crawlers": false,
+      "sitemap_directives": [
+        "https://siruitool.com/sitemap.xml"
+      ],
+      "error": ""
+    },
+    "sitemap": {
+      "files_checked": [
+        {
+          "url": "https://siruitool.com/sitemap.xml",
+          "http_status": 200,
+          "valid": true,
+          "page_urls": 13,
+          "child_sitemaps": 0,
+          "error": ""
+        }
+      ],
+      "valid_files": 1,
+      "urls_found": 13,
+      "same_domain_urls": 13,
+      "audited_indexable_pages": 7,
+      "audited_pages_covered": 7,
+      "missing_audited_pages": []
+    },
+    "canonical_consistency": {
+      "canonical_pages": 7,
+      "canonical_hosts": [
+        "siruitool.com"
+      ],
+      "served_to_canonical_host_mismatches": [
+        {
+          "url": "https://www.siruitool.com/",
+          "canonical": "https://siruitool.com/?lang=en"
+        },
+        {
+          "url": "https://www.siruitool.com/products",
+          "canonical": "https://siruitool.com/products?lang=en"
+        },
+        {
+          "url": "https://www.siruitool.com/products/angled-sash-paint-brush-50mm",
+          "canonical": "https://siruitool.com/products/angled-sash-paint-brush-50mm?lang=en"
+        },
+        {
+          "url": "https://www.siruitool.com/products/flat-wall-paint-brush-25mm",
+          "canonical": "https://siruitool.com/products/flat-wall-paint-brush-25mm?lang=en"
+        },
+        {
+          "url": "https://www.siruitool.com/products/microfiber-paint-roller-kit",
+          "canonical": "https://siruitool.com/products/microfiber-paint-roller-kit?lang=en"
+        },
+        {
+          "url": "https://www.siruitool.com/factory",
+          "canonical": "https://siruitool.com/factory?lang=en"
+        },
+        {
+          "url": "https://www.siruitool.com/oem-odm",
+          "canonical": "https://siruitool.com/oem-odm?lang=en"
+        }
+      ]
+    }
+  },
+  "prioritized_issues": [
+    {
+      "url": "https://www.siruitool.com/",
+      "page_type": "homepage",
+      "section": "technical_basics",
+      "name": "Relevant structured data is present",
+      "status": "warning",
+      "evidence": "No JSON-LD schema types found.",
+      "severity": "medium",
+      "priority": "P2",
+      "recommendation": "Add valid Organization or WebSite JSON-LD for this page type."
+    },
+    {
+      "url": "https://www.siruitool.com/inquiry",
+      "page_type": "contact",
+      "section": "seo_basics",
+      "name": "Canonical URL present",
+      "status": "warning",
+      "evidence": "No canonical link found.",
+      "severity": "medium",
+      "priority": "P2",
+      "recommendation": "Add a self-referencing canonical that follows the site's chosen hostname and language convention."
+    },
+    {
+      "url": "https://www.siruitool.com/products/angled-sash-paint-brush-50mm",
+      "page_type": "product_detail",
+      "section": "technical_basics",
+      "name": "Relevant structured data is present",
+      "status": "warning",
+      "evidence": "No JSON-LD schema types found.",
+      "severity": "medium",
+      "priority": "P2",
+      "recommendation": "Add valid Product JSON-LD for this page type."
+    },
+    {
+      "url": "https://www.siruitool.com/products/flat-wall-paint-brush-25mm",
+      "page_type": "product_detail",
+      "section": "technical_basics",
+      "name": "Relevant structured data is present",
+      "status": "warning",
+      "evidence": "No JSON-LD schema types found.",
+      "severity": "medium",
+      "priority": "P2",
+      "recommendation": "Add valid Product JSON-LD for this page type."
+    },
+    {
+      "url": "https://www.siruitool.com/products/microfiber-paint-roller-kit",
+      "page_type": "product_detail",
+      "section": "technical_basics",
+      "name": "Relevant structured data is present",
+      "status": "warning",
+      "evidence": "No JSON-LD schema types found.",
+      "severity": "medium",
+      "priority": "P2",
+      "recommendation": "Add valid Product JSON-LD for this page type."
+    },
+    {
+      "url": "https://www.siruitool.com/",
+      "page_type": "site",
+      "section": "technical_seo",
+      "name": "Served and canonical hostnames are aligned",
+      "status": "warning",
+      "evidence": "7 audited page(s) use a canonical hostname different from the served hostname.",
+      "severity": "low",
+      "priority": "P3",
+      "recommendation": "Verify redirects, internal links, sitemap URLs, and canonicals all use the chosen preferred hostname."
+    }
+  ],
+  "errors": []
+}
