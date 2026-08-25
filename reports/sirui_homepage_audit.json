@@ -1,0 +1,102 @@
+{
+  "agent_version": "0.1",
+  "requested_url": "https://www.siruitool.com",
+  "audited_at": "2026-08-24T17:39:13.498063+00:00",
+  "page": {
+    "final_url": "https://www.siruitool.com",
+    "http_status": 200,
+    "title": "SIRUI INTERNATIONAL TRADE ZHENJIANG CO., LTD. | Brush Manufacturer & Wholesale Supplier",
+    "meta_description": "Professional brush product matrix, OEM/ODM capabilities, and inquiry workflow for overseas B2B buyers.",
+    "h1": [
+      "Hardware tool supply solutions for importers, distributors, and private-label buyers."
+    ]
+  },
+  "summary": {
+    "status": "needs_review",
+    "checks_passed": 10,
+    "checks_total": 12
+  },
+  "sections": {
+    "homepage_positioning": {
+      "status": "needs_review",
+      "checks": [
+        {
+          "name": "Clear manufacturer positioning",
+          "status": "pass",
+          "evidence": "Signals found: manufacturer, supplier"
+        },
+        {
+          "name": "Core product is stated",
+          "status": "warning",
+          "evidence": "No core paint-roller product term in the title/H1."
+        },
+        {
+          "name": "Single focused homepage headline",
+          "status": "pass",
+          "evidence": "Found 1 H1 heading(s)."
+        }
+      ]
+    },
+    "seo_basics": {
+      "status": "needs_review",
+      "checks": [
+        {
+          "name": "Page title present",
+          "status": "pass",
+          "evidence": "SIRUI INTERNATIONAL TRADE ZHENJIANG CO., LTD. | Brush Manufacturer & Wholesale Supplier"
+        },
+        {
+          "name": "Meta description present",
+          "status": "pass",
+          "evidence": "Professional brush product matrix, OEM/ODM capabilities, and inquiry workflow for overseas B2B buyers."
+        },
+        {
+          "name": "Canonical URL present",
+          "status": "warning",
+          "evidence": "No canonical link found."
+        },
+        {
+          "name": "HTML language declared",
+          "status": "pass",
+          "evidence": "en"
+        }
+      ]
+    },
+    "product_structure": {
+      "status": "pass",
+      "checks": [
+        {
+          "name": "Product navigation is discoverable",
+          "status": "pass",
+          "evidence": "Found 17 product-related link(s)."
+        },
+        {
+          "name": "Multiple product paths are available",
+          "status": "pass",
+          "evidence": "Found 17 product-related link(s); target is at least 3."
+        }
+      ]
+    },
+    "b2b_conversion_elements": {
+      "status": "pass",
+      "checks": [
+        {
+          "name": "B2B offer is visible",
+          "status": "pass",
+          "evidence": "Signals found: oem, odm, private label, wholesale, distributor, bulk"
+        },
+        {
+          "name": "Conversion call to action is visible",
+          "status": "pass",
+          "evidence": "Calls to action found: send inquiry"
+        },
+        {
+          "name": "Direct contact route is available",
+          "status": "pass",
+          "evidence": "Found 6 email, phone, or WhatsApp link(s)."
+        }
+      ]
+    }
+  },
+  "errors": []
+}
