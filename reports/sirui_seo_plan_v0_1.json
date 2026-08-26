@@ -1,0 +1,500 @@
+{
+  "seo_agent_version": "0.1",
+  "source_audit_version": "0.4",
+  "source_url": "https://www.siruitool.com/",
+  "generated_at": "2026-08-25T11:00:38.491547+00:00",
+  "scope": {
+    "markets": [
+      "United States",
+      "United Kingdom",
+      "Australia"
+    ],
+    "audiences": [
+      "importers",
+      "distributors",
+      "private-label buyers"
+    ],
+    "keyword_data_status": "Seed themes only; validate before publishing."
+  },
+  "summary": {
+    "pages_planned": 8,
+    "technical_tasks": 6,
+    "tasks_by_priority": {
+      "P1": 0,
+      "P2": 5,
+      "P3": 1
+    }
+  },
+  "technical_backlog": [
+    {
+      "task_id": "SEO-001",
+      "priority": "P2",
+      "severity": "medium",
+      "url": "https://www.siruitool.com/",
+      "page_type": "homepage",
+      "issue": "Relevant structured data is present",
+      "evidence": "No JSON-LD schema types found.",
+      "recommended_action": "Add valid Organization or WebSite JSON-LD for this page type.",
+      "owner": "SEO and development review",
+      "status": "open"
+    },
+    {
+      "task_id": "SEO-002",
+      "priority": "P2",
+      "severity": "medium",
+      "url": "https://www.siruitool.com/inquiry",
+      "page_type": "contact",
+      "issue": "Canonical URL present",
+      "evidence": "No canonical link found.",
+      "recommended_action": "Add a self-referencing canonical that follows the site's chosen hostname and language convention.",
+      "owner": "SEO and development review",
+      "status": "open"
+    },
+    {
+      "task_id": "SEO-003",
+      "priority": "P2",
+      "severity": "medium",
+      "url": "https://www.siruitool.com/products/angled-sash-paint-brush-50mm",
+      "page_type": "product_detail",
+      "issue": "Relevant structured data is present",
+      "evidence": "No JSON-LD schema types found.",
+      "recommended_action": "Add valid Product JSON-LD for this page type.",
+      "owner": "SEO and development review",
+      "status": "open"
+    },
+    {
+      "task_id": "SEO-004",
+      "priority": "P2",
+      "severity": "medium",
+      "url": "https://www.siruitool.com/products/flat-wall-paint-brush-25mm",
+      "page_type": "product_detail",
+      "issue": "Relevant structured data is present",
+      "evidence": "No JSON-LD schema types found.",
+      "recommended_action": "Add valid Product JSON-LD for this page type.",
+      "owner": "SEO and development review",
+      "status": "open"
+    },
+    {
+      "task_id": "SEO-005",
+      "priority": "P2",
+      "severity": "medium",
+      "url": "https://www.siruitool.com/products/microfiber-paint-roller-kit",
+      "page_type": "product_detail",
+      "issue": "Relevant structured data is present",
+      "evidence": "No JSON-LD schema types found.",
+      "recommended_action": "Add valid Product JSON-LD for this page type.",
+      "owner": "SEO and development review",
+      "status": "open"
+    },
+    {
+      "task_id": "SEO-006",
+      "priority": "P3",
+      "severity": "low",
+      "url": "https://www.siruitool.com/",
+      "page_type": "site",
+      "issue": "Served and canonical hostnames are aligned",
+      "evidence": "7 audited page(s) use a canonical hostname different from the served hostname.",
+      "recommended_action": "Verify redirects, internal links, sitemap URLs, and canonicals all use the chosen preferred hostname.",
+      "owner": "SEO and development review",
+      "status": "open"
+    }
+  ],
+  "page_plans": [
+    {
+      "url": "https://www.siruitool.com/",
+      "page_type": "homepage",
+      "current_metadata": {
+        "title": "Paint Brush & Paint Roller Manufacturer in China | SIRUI",
+        "meta_description": "OEM paint brush and paint roller manufacturing for importers, distributors, and private-label sourcing programs.",
+        "h1": [
+          "Paint Brush & Paint Roller Manufacturer in China"
+        ]
+      },
+      "target_markets": [
+        "United States",
+        "United Kingdom",
+        "Australia"
+      ],
+      "target_audiences": [
+        "importers",
+        "distributors",
+        "private-label buyers"
+      ],
+      "search_intent": "commercial investigation",
+      "keyword_themes": {
+        "primary": [
+          "paint roller manufacturer in china",
+          "paint brush manufacturer in china"
+        ],
+        "secondary": [
+          "OEM paint roller manufacturer",
+          "private label painting tools",
+          "wholesale paint brushes and rollers"
+        ],
+        "validation_status": "needs_keyword_research",
+        "metrics": {
+          "search_volume": "Needs verification",
+          "ranking_difficulty": "Needs verification",
+          "current_position": "Needs verification"
+        }
+      },
+      "metadata_guidance": {
+        "title_pattern": "Paint Brush & Paint Roller Manufacturer in China | SIRUI",
+        "meta_description_should_cover": [
+          "manufacturer positioning",
+          "paint brushes and paint rollers",
+          "OEM/ODM and private label",
+          "importer and distributor audience"
+        ],
+        "approval_required": true
+      }
+    },
+    {
+      "url": "https://www.siruitool.com/products",
+      "page_type": "product_index",
+      "current_metadata": {
+        "title": "Paint Brush & Paint Roller Manufacturer | SIRUI",
+        "meta_description": "Wholesale paint brushes and paint rollers for OEM, private-label, distributor, and professional sourcing programs.",
+        "h1": [
+          "Paint Brushes & Paint Rollers"
+        ]
+      },
+      "target_markets": [
+        "United States",
+        "United Kingdom",
+        "Australia"
+      ],
+      "target_audiences": [
+        "importers",
+        "distributors",
+        "private-label buyers"
+      ],
+      "search_intent": "commercial category",
+      "keyword_themes": {
+        "primary": [
+          "wholesale paint brushes",
+          "wholesale paint rollers"
+        ],
+        "secondary": [
+          "OEM painting tools",
+          "private label paint brushes",
+          "paint roller supplier"
+        ],
+        "validation_status": "needs_keyword_research",
+        "metrics": {
+          "search_volume": "Needs verification",
+          "ranking_difficulty": "Needs verification",
+          "current_position": "Needs verification"
+        }
+      },
+      "metadata_guidance": {
+        "title_pattern": "Wholesale Paint Brushes & Paint Rollers | OEM Manufacturer | SIRUI",
+        "meta_description_should_cover": [
+          "product range",
+          "wholesale and OEM availability",
+          "distributor sourcing",
+          "inquiry action"
+        ],
+        "approval_required": true
+      }
+    },
+    {
+      "url": "https://www.siruitool.com/products/angled-sash-paint-brush-50mm",
+      "page_type": "product_detail",
+      "current_metadata": {
+        "title": "50mm Angled Sash Paint Brush | PB-ANGLE-050",
+        "meta_description": "Angled sash brush for precision cutting-in, with tapered synthetic filaments and customizable handle colors for private-label ranges.",
+        "h1": [
+          "50mm Angled Sash Paint Brush"
+        ]
+      },
+      "target_markets": [
+        "United States",
+        "United Kingdom",
+        "Australia"
+      ],
+      "target_audiences": [
+        "importers",
+        "distributors",
+        "private-label buyers"
+      ],
+      "search_intent": "commercial product",
+      "keyword_themes": {
+        "primary": [
+          "50mm angled sash paint brush",
+          "50mm angled sash paint brush wholesale"
+        ],
+        "secondary": [
+          "50mm angled sash paint brush manufacturer",
+          "private label 50mm angled sash paint brush",
+          "OEM 50mm angled sash paint brush"
+        ],
+        "validation_status": "needs_keyword_research",
+        "metrics": {
+          "search_volume": "Needs verification",
+          "ranking_difficulty": "Needs verification",
+          "current_position": "Needs verification"
+        }
+      },
+      "metadata_guidance": {
+        "title_pattern": "50mm Angled Sash Paint Brush | Product Code or Key Specification | SIRUI",
+        "meta_description_should_cover": [
+          "verified material and size",
+          "buyer application",
+          "verified customization options",
+          "inquiry action"
+        ],
+        "approval_required": true
+      }
+    },
+    {
+      "url": "https://www.siruitool.com/products/flat-wall-paint-brush-25mm",
+      "page_type": "product_detail",
+      "current_metadata": {
+        "title": "25mm Flat Wall Paint Brush | PB-FLAT-025",
+        "meta_description": "Economical flat paint brush with dense PET/PBT bristles, stainless ferrule, and smooth beech handle for contractor and retail programs.",
+        "h1": [
+          "25mm Flat Wall Paint Brush"
+        ]
+      },
+      "target_markets": [
+        "United States",
+        "United Kingdom",
+        "Australia"
+      ],
+      "target_audiences": [
+        "importers",
+        "distributors",
+        "private-label buyers"
+      ],
+      "search_intent": "commercial product",
+      "keyword_themes": {
+        "primary": [
+          "25mm flat wall paint brush",
+          "25mm flat wall paint brush wholesale"
+        ],
+        "secondary": [
+          "25mm flat wall paint brush manufacturer",
+          "private label 25mm flat wall paint brush",
+          "OEM 25mm flat wall paint brush"
+        ],
+        "validation_status": "needs_keyword_research",
+        "metrics": {
+          "search_volume": "Needs verification",
+          "ranking_difficulty": "Needs verification",
+          "current_position": "Needs verification"
+        }
+      },
+      "metadata_guidance": {
+        "title_pattern": "25mm Flat Wall Paint Brush | Product Code or Key Specification | SIRUI",
+        "meta_description_should_cover": [
+          "verified material and size",
+          "buyer application",
+          "verified customization options",
+          "inquiry action"
+        ],
+        "approval_required": true
+      }
+    },
+    {
+      "url": "https://www.siruitool.com/products/microfiber-paint-roller-kit",
+      "page_type": "product_detail",
+      "current_metadata": {
+        "title": "Microfiber Paint Roller Kit | PB-ROLLER-009",
+        "meta_description": "Paint roller kit with microfiber sleeve, steel frame, and optional tray, ready for retail DIY and contractor channels.",
+        "h1": [
+          "Microfiber Paint Roller Kit"
+        ]
+      },
+      "target_markets": [
+        "United States",
+        "United Kingdom",
+        "Australia"
+      ],
+      "target_audiences": [
+        "importers",
+        "distributors",
+        "private-label buyers"
+      ],
+      "search_intent": "commercial product",
+      "keyword_themes": {
+        "primary": [
+          "microfiber paint roller kit",
+          "microfiber paint roller kit wholesale"
+        ],
+        "secondary": [
+          "microfiber paint roller kit manufacturer",
+          "private label microfiber paint roller kit",
+          "OEM microfiber paint roller kit"
+        ],
+        "validation_status": "needs_keyword_research",
+        "metrics": {
+          "search_volume": "Needs verification",
+          "ranking_difficulty": "Needs verification",
+          "current_position": "Needs verification"
+        }
+      },
+      "metadata_guidance": {
+        "title_pattern": "Microfiber Paint Roller Kit | Product Code or Key Specification | SIRUI",
+        "meta_description_should_cover": [
+          "verified material and size",
+          "buyer application",
+          "verified customization options",
+          "inquiry action"
+        ],
+        "approval_required": true
+      }
+    },
+    {
+      "url": "https://www.siruitool.com/factory",
+      "page_type": "about",
+      "current_metadata": {
+        "title": "Factory | Paint Brush & Paint Roller Manufacturer",
+        "meta_description": "Review a practical production coordination workflow for paint brush and paint roller sourcing, samples, materials and packaging.",
+        "h1": [
+          "Factory"
+        ]
+      },
+      "target_markets": [
+        "United States",
+        "United Kingdom",
+        "Australia"
+      ],
+      "target_audiences": [
+        "importers",
+        "distributors",
+        "private-label buyers"
+      ],
+      "search_intent": "supplier validation",
+      "keyword_themes": {
+        "primary": [
+          "paint roller factory china",
+          "paint brush factory china"
+        ],
+        "secondary": [
+          "painting tool manufacturer",
+          "paint tool quality control",
+          "OEM painting tool factory"
+        ],
+        "validation_status": "needs_keyword_research",
+        "metrics": {
+          "search_volume": "Needs verification",
+          "ranking_difficulty": "Needs verification",
+          "current_position": "Needs verification"
+        }
+      },
+      "metadata_guidance": {
+        "title_pattern": "Paint Brush & Paint Roller Factory in China | SIRUI",
+        "meta_description_should_cover": [
+          "factory role",
+          "production workflow",
+          "quality-control evidence",
+          "OEM sourcing support"
+        ],
+        "approval_required": true
+      }
+    },
+    {
+      "url": "https://www.siruitool.com/oem-odm",
+      "page_type": "b2b_service",
+      "current_metadata": {
+        "title": "OEM & Private Label Paint Brushes and Rollers | SIRUI",
+        "meta_description": "Discuss OEM, ODM and private-label paint brush and paint roller projects for import, distribution and branded sourcing.",
+        "h1": [
+          "OEM & Private Label Paint Brushes and Rollers"
+        ]
+      },
+      "target_markets": [
+        "United States",
+        "United Kingdom",
+        "Australia"
+      ],
+      "target_audiences": [
+        "importers",
+        "distributors",
+        "private-label buyers"
+      ],
+      "search_intent": "commercial service",
+      "keyword_themes": {
+        "primary": [
+          "OEM paint roller manufacturer",
+          "private label paint brushes"
+        ],
+        "secondary": [
+          "ODM painting tools",
+          "custom paint roller packaging",
+          "private label painting tools supplier"
+        ],
+        "validation_status": "needs_keyword_research",
+        "metrics": {
+          "search_volume": "Needs verification",
+          "ranking_difficulty": "Needs verification",
+          "current_position": "Needs verification"
+        }
+      },
+      "metadata_guidance": {
+        "title_pattern": "OEM & Private Label Paint Brushes and Rollers | SIRUI",
+        "meta_description_should_cover": [
+          "OEM/ODM and private-label scope",
+          "product categories",
+          "custom packaging subject to verification",
+          "project inquiry action"
+        ],
+        "approval_required": true
+      }
+    },
+    {
+      "url": "https://www.siruitool.com/inquiry",
+      "page_type": "contact",
+      "current_metadata": {
+        "title": "Inquiry List | SIRUI INTERNATIONAL TRADE ZHENJIANG CO., LTD.",
+        "meta_description": "Submit single-product or multi-product brush inquiries without checkout or online payment.",
+        "h1": [
+          "Send product inquiry"
+        ]
+      },
+      "target_markets": [
+        "United States",
+        "United Kingdom",
+        "Australia"
+      ],
+      "target_audiences": [
+        "importers",
+        "distributors",
+        "private-label buyers"
+      ],
+      "search_intent": "conversion",
+      "keyword_themes": {
+        "primary": [
+          "SIRUI product inquiry",
+          "painting tools request a quote"
+        ],
+        "secondary": [
+          "OEM paint roller inquiry",
+          "paint brush quotation"
+        ],
+        "validation_status": "needs_keyword_research",
+        "metrics": {
+          "search_volume": "Needs verification",
+          "ranking_difficulty": "Needs verification",
+          "current_position": "Needs verification"
+        }
+      },
+      "metadata_guidance": {
+        "title_pattern": "Request a Quote for Paint Brushes & Paint Rollers | SIRUI",
+        "meta_description_should_cover": [
+          "paint brush and paint roller inquiries",
+          "OEM/private-label project context",
+          "required buyer specifications",
+          "sales contact action"
+        ],
+        "approval_required": true
+      }
+    }
+  ],
+  "guardrails": [
+    "Do not invent search volume, rankings, product facts, certifications, pricing, MOQ, or lead times.",
+    "Validate keyword demand with approved data sources before changing production metadata.",
+    "Require human approval before publishing any SEO or content change."
+  ]
+}

@@ -1,0 +1,317 @@
+{
+  "developer_agent_version": "0.1",
+  "source_seo_agent_version": "0.1",
+  "source_url": "https://www.siruitool.com/",
+  "generated_at": "2026-08-25T13:32:35.833487+00:00",
+  "summary": {
+    "implementation_tasks": 6,
+    "tasks_by_change_type": {
+      "structured_data": 4,
+      "canonical": 1,
+      "hostname_consolidation": 1
+    },
+    "tasks_by_risk": {
+      "medium": 5,
+      "high": 1
+    },
+    "production_changes_authorized": 0
+  },
+  "release_policy": {
+    "default_environment": "staging_or_preview",
+    "production_changes_allowed": false,
+    "human_approval_required": true,
+    "platform_status": "Needs verification"
+  },
+  "implementation_tasks": [
+    {
+      "dev_task_id": "DEV-001",
+      "source_task_id": "SEO-001",
+      "priority": "P2",
+      "url": "https://www.siruitool.com/",
+      "page_type": "homepage",
+      "issue": "Relevant structured data is present",
+      "evidence": "No JSON-LD schema types found.",
+      "recommended_action": "Add valid Organization or WebSite JSON-LD for this page type.",
+      "change_type": "structured_data",
+      "implementation_risk": "medium",
+      "implementation_scope": "Relevant page or page-type template head markup.",
+      "implementation_steps": [
+        "Identify the CMS, framework, template owner, and current JSON-LD rendering path.",
+        "Use the schema type named in the approved recommendation: Add valid Organization or WebSite JSON-LD for this page type.",
+        "Populate only fields supported by verified page content or approved business data.",
+        "Render valid JSON-LD in the server response or approved page template.",
+        "Deploy to a staging or preview environment before production approval."
+      ],
+      "required_inputs": [
+        "CMS or framework and template location: Needs verification",
+        "Approved business or product fields for schema: Needs verification",
+        "Preferred canonical page URL: Needs verification"
+      ],
+      "acceptance_criteria": [
+        "The affected URL returns HTTP 200 in the staging or preview environment.",
+        "Every JSON-LD block parses as valid JSON.",
+        "The audit detects the schema type required for this page type.",
+        "Schema values agree with visible, verified page content.",
+        "No page layout, navigation, inquiry, or JavaScript regression is introduced."
+      ],
+      "rollback_plan": "Revert the template change and remove the new JSON-LD block, then rerun the page audit.",
+      "environment_sequence": [
+        "local",
+        "staging_or_preview",
+        "production"
+      ],
+      "approval_gate": {
+        "production_change_allowed": false,
+        "required_approvers": [
+          "website owner",
+          "SEO reviewer",
+          "technical owner"
+        ],
+        "release_status": "proposal_only"
+      }
+    },
+    {
+      "dev_task_id": "DEV-002",
+      "source_task_id": "SEO-002",
+      "priority": "P2",
+      "url": "https://www.siruitool.com/inquiry",
+      "page_type": "contact",
+      "issue": "Canonical URL present",
+      "evidence": "No canonical link found.",
+      "recommended_action": "Add a self-referencing canonical that follows the site's chosen hostname and language convention.",
+      "change_type": "canonical",
+      "implementation_risk": "medium",
+      "implementation_scope": "Head markup for the affected page or its template.",
+      "implementation_steps": [
+        "Confirm the preferred production hostname and language URL convention.",
+        "Add exactly one absolute HTTPS canonical URL for the affected page.",
+        "Ensure the canonical target is indexable and returns HTTP 200.",
+        "Deploy to a staging or preview environment and inspect the rendered HTML.",
+        "Request SEO approval before production release."
+      ],
+      "required_inputs": [
+        "Chosen preferred hostname: Needs verification",
+        "Approved language and query-string convention: Needs verification",
+        "CMS or template location: Needs verification"
+      ],
+      "acceptance_criteria": [
+        "The rendered page contains exactly one canonical link.",
+        "The canonical is an absolute HTTPS URL using the approved hostname.",
+        "The canonical target returns HTTP 200 and is not blocked by robots.txt.",
+        "The Website Audit Agent canonical check passes after deployment.",
+        "The inquiry form and all conversion routes continue to work."
+      ],
+      "rollback_plan": "Revert the canonical template or page-field change and restore the previously approved head markup.",
+      "environment_sequence": [
+        "local",
+        "staging_or_preview",
+        "production"
+      ],
+      "approval_gate": {
+        "production_change_allowed": false,
+        "required_approvers": [
+          "website owner",
+          "SEO reviewer",
+          "technical owner"
+        ],
+        "release_status": "proposal_only"
+      }
+    },
+    {
+      "dev_task_id": "DEV-003",
+      "source_task_id": "SEO-003",
+      "priority": "P2",
+      "url": "https://www.siruitool.com/products/angled-sash-paint-brush-50mm",
+      "page_type": "product_detail",
+      "issue": "Relevant structured data is present",
+      "evidence": "No JSON-LD schema types found.",
+      "recommended_action": "Add valid Product JSON-LD for this page type.",
+      "change_type": "structured_data",
+      "implementation_risk": "medium",
+      "implementation_scope": "Relevant page or page-type template head markup.",
+      "implementation_steps": [
+        "Identify the CMS, framework, template owner, and current JSON-LD rendering path.",
+        "Use the schema type named in the approved recommendation: Add valid Product JSON-LD for this page type.",
+        "Populate only fields supported by verified page content or approved business data.",
+        "Render valid JSON-LD in the server response or approved page template.",
+        "Deploy to a staging or preview environment before production approval."
+      ],
+      "required_inputs": [
+        "CMS or framework and template location: Needs verification",
+        "Approved business or product fields for schema: Needs verification",
+        "Preferred canonical page URL: Needs verification"
+      ],
+      "acceptance_criteria": [
+        "The affected URL returns HTTP 200 in the staging or preview environment.",
+        "Every JSON-LD block parses as valid JSON.",
+        "The audit detects the schema type required for this page type.",
+        "Schema values agree with visible, verified page content.",
+        "No page layout, navigation, inquiry, or JavaScript regression is introduced."
+      ],
+      "rollback_plan": "Revert the template change and remove the new JSON-LD block, then rerun the page audit.",
+      "environment_sequence": [
+        "local",
+        "staging_or_preview",
+        "production"
+      ],
+      "approval_gate": {
+        "production_change_allowed": false,
+        "required_approvers": [
+          "website owner",
+          "SEO reviewer",
+          "technical owner"
+        ],
+        "release_status": "proposal_only"
+      }
+    },
+    {
+      "dev_task_id": "DEV-004",
+      "source_task_id": "SEO-004",
+      "priority": "P2",
+      "url": "https://www.siruitool.com/products/flat-wall-paint-brush-25mm",
+      "page_type": "product_detail",
+      "issue": "Relevant structured data is present",
+      "evidence": "No JSON-LD schema types found.",
+      "recommended_action": "Add valid Product JSON-LD for this page type.",
+      "change_type": "structured_data",
+      "implementation_risk": "medium",
+      "implementation_scope": "Relevant page or page-type template head markup.",
+      "implementation_steps": [
+        "Identify the CMS, framework, template owner, and current JSON-LD rendering path.",
+        "Use the schema type named in the approved recommendation: Add valid Product JSON-LD for this page type.",
+        "Populate only fields supported by verified page content or approved business data.",
+        "Render valid JSON-LD in the server response or approved page template.",
+        "Deploy to a staging or preview environment before production approval."
+      ],
+      "required_inputs": [
+        "CMS or framework and template location: Needs verification",
+        "Approved business or product fields for schema: Needs verification",
+        "Preferred canonical page URL: Needs verification"
+      ],
+      "acceptance_criteria": [
+        "The affected URL returns HTTP 200 in the staging or preview environment.",
+        "Every JSON-LD block parses as valid JSON.",
+        "The audit detects the schema type required for this page type.",
+        "Schema values agree with visible, verified page content.",
+        "No page layout, navigation, inquiry, or JavaScript regression is introduced."
+      ],
+      "rollback_plan": "Revert the template change and remove the new JSON-LD block, then rerun the page audit.",
+      "environment_sequence": [
+        "local",
+        "staging_or_preview",
+        "production"
+      ],
+      "approval_gate": {
+        "production_change_allowed": false,
+        "required_approvers": [
+          "website owner",
+          "SEO reviewer",
+          "technical owner"
+        ],
+        "release_status": "proposal_only"
+      }
+    },
+    {
+      "dev_task_id": "DEV-005",
+      "source_task_id": "SEO-005",
+      "priority": "P2",
+      "url": "https://www.siruitool.com/products/microfiber-paint-roller-kit",
+      "page_type": "product_detail",
+      "issue": "Relevant structured data is present",
+      "evidence": "No JSON-LD schema types found.",
+      "recommended_action": "Add valid Product JSON-LD for this page type.",
+      "change_type": "structured_data",
+      "implementation_risk": "medium",
+      "implementation_scope": "Relevant page or page-type template head markup.",
+      "implementation_steps": [
+        "Identify the CMS, framework, template owner, and current JSON-LD rendering path.",
+        "Use the schema type named in the approved recommendation: Add valid Product JSON-LD for this page type.",
+        "Populate only fields supported by verified page content or approved business data.",
+        "Render valid JSON-LD in the server response or approved page template.",
+        "Deploy to a staging or preview environment before production approval."
+      ],
+      "required_inputs": [
+        "CMS or framework and template location: Needs verification",
+        "Approved business or product fields for schema: Needs verification",
+        "Preferred canonical page URL: Needs verification"
+      ],
+      "acceptance_criteria": [
+        "The affected URL returns HTTP 200 in the staging or preview environment.",
+        "Every JSON-LD block parses as valid JSON.",
+        "The audit detects the schema type required for this page type.",
+        "Schema values agree with visible, verified page content.",
+        "No page layout, navigation, inquiry, or JavaScript regression is introduced."
+      ],
+      "rollback_plan": "Revert the template change and remove the new JSON-LD block, then rerun the page audit.",
+      "environment_sequence": [
+        "local",
+        "staging_or_preview",
+        "production"
+      ],
+      "approval_gate": {
+        "production_change_allowed": false,
+        "required_approvers": [
+          "website owner",
+          "SEO reviewer",
+          "technical owner"
+        ],
+        "release_status": "proposal_only"
+      }
+    },
+    {
+      "dev_task_id": "DEV-006",
+      "source_task_id": "SEO-006",
+      "priority": "P3",
+      "url": "https://www.siruitool.com/",
+      "page_type": "site",
+      "issue": "Served and canonical hostnames are aligned",
+      "evidence": "7 audited page(s) use a canonical hostname different from the served hostname.",
+      "recommended_action": "Verify redirects, internal links, sitemap URLs, and canonicals all use the chosen preferred hostname.",
+      "change_type": "hostname_consolidation",
+      "implementation_risk": "high",
+      "implementation_scope": "CDN or web-server redirects, canonicals, internal links, and XML sitemap URLs.",
+      "implementation_steps": [
+        "Choose either the www or non-www hostname as the single production standard.",
+        "Inventory redirects, internal links, canonicals, sitemap URLs, analytics settings, and Search Console properties.",
+        "Configure permanent 301 or 308 redirects from the non-preferred hostname while preserving path and query data.",
+        "Update canonicals, internal links, and XML sitemap entries to the preferred hostname.",
+        "Test on staging where possible, then schedule a monitored production release after approval."
+      ],
+      "required_inputs": [
+        "Approved preferred hostname: Needs verification",
+        "CDN, DNS, reverse-proxy, or web-server owner: Needs verification",
+        "Analytics and Google Search Console ownership: Needs verification",
+        "Rollback contact and maintenance window: Needs verification"
+      ],
+      "acceptance_criteria": [
+        "Every tested non-preferred URL redirects once to the matching preferred URL.",
+        "Redirects preserve paths and required query parameters without loops or chains.",
+        "All audited canonicals, internal links, and sitemap URLs use the preferred hostname.",
+        "Key pages return HTTP 200 after the redirect and pass the Website Audit Agent checks.",
+        "Analytics, inquiry forms, and conversion tracking continue to operate."
+      ],
+      "rollback_plan": "Restore the previous redirect configuration and URL settings from the approved backup, then verify every key page and inquiry path.",
+      "environment_sequence": [
+        "local",
+        "staging_or_preview",
+        "production"
+      ],
+      "approval_gate": {
+        "production_change_allowed": false,
+        "required_approvers": [
+          "website owner",
+          "SEO reviewer",
+          "technical owner"
+        ],
+        "release_status": "proposal_only"
+      }
+    }
+  ],
+  "global_definition_of_done": [
+    "Required inputs and factual values are verified by their owners.",
+    "The change is reviewed in staging or an equivalent preview environment.",
+    "Relevant automated tests and Website Audit Agent checks pass.",
+    "Critical inquiry, analytics, navigation, and mobile paths are manually checked.",
+    "A named approver authorizes the production release and rollback owner."
+  ]
+}

@@ -1,0 +1,917 @@
+{
+  "content_agent_version": "0.1",
+  "source_seo_agent_version": "0.1",
+  "source_url": "https://www.siruitool.com/",
+  "generated_at": "2026-08-25T13:32:35.833507+00:00",
+  "summary": {
+    "content_briefs": 8,
+    "briefs_by_page_type": {
+      "homepage": 1,
+      "product_index": 1,
+      "product_detail": 3,
+      "about": 1,
+      "b2b_service": 1,
+      "contact": 1
+    },
+    "production_pages_authorized": 0
+  },
+  "content_policy": {
+    "default_status": "brief_only",
+    "production_publish_allowed": false,
+    "human_approval_required": true,
+    "unverified_value": "Needs verification"
+  },
+  "content_briefs": [
+    {
+      "content_brief_id": "CONTENT-001",
+      "url": "https://www.siruitool.com/",
+      "page_type": "homepage",
+      "page_goal": "Explain SIRUI's verified manufacturer positioning and guide qualified B2B buyers to products, capabilities, and inquiry.",
+      "target_markets": [
+        "United States",
+        "United Kingdom",
+        "Australia"
+      ],
+      "target_audiences": [
+        "importers",
+        "distributors",
+        "private-label buyers"
+      ],
+      "search_intent": "commercial investigation",
+      "current_metadata": {
+        "title": "Paint Brush & Paint Roller Manufacturer in China | SIRUI",
+        "meta_description": "OEM paint brush and paint roller manufacturing for importers, distributors, and private-label sourcing programs.",
+        "h1": [
+          "Paint Brush & Paint Roller Manufacturer in China"
+        ]
+      },
+      "keyword_assignment": {
+        "primary": [
+          "paint roller manufacturer in china",
+          "paint brush manufacturer in china"
+        ],
+        "secondary": [
+          "OEM paint roller manufacturer",
+          "private label painting tools",
+          "wholesale paint brushes and rollers"
+        ],
+        "validation_status": "needs_keyword_research",
+        "usage_rule": "Use naturally after keyword validation; do not force repetition."
+      },
+      "metadata_brief": {
+        "title_draft": "Paint Brush & Paint Roller Manufacturer in China | SIRUI",
+        "meta_description_should_cover": [
+          "manufacturer positioning",
+          "paint brushes and paint rollers",
+          "OEM/ODM and private label",
+          "importer and distributor audience"
+        ],
+        "draft_status": "approval_required"
+      },
+      "recommended_sections": [
+        {
+          "section": "Hero positioning",
+          "objective": "State the primary product categories, manufacturer role, target buyer, and one inquiry action.",
+          "evidence_status": "Needs verification"
+        },
+        {
+          "section": "Product category overview",
+          "objective": "Help buyers reach relevant paint brush and paint roller categories quickly.",
+          "evidence_status": "Needs verification"
+        },
+        {
+          "section": "OEM, ODM, and private label",
+          "objective": "Summarize only verified customization scope and link to the service page.",
+          "evidence_status": "Needs verification"
+        },
+        {
+          "section": "Factory and quality evidence",
+          "objective": "Show approved production and quality-control evidence without unsupported claims.",
+          "evidence_status": "Needs verification"
+        },
+        {
+          "section": "Buyer process",
+          "objective": "Explain the approved path from requirements to sample, quotation, and order without promising terms.",
+          "evidence_status": "Needs verification"
+        },
+        {
+          "section": "Primary inquiry CTA",
+          "objective": "Ask buyers for product category, quantity, market, packaging, and destination details.",
+          "evidence_status": "Needs verification"
+        }
+      ],
+      "required_verified_inputs": [
+        "Approved company positioning and legal company name",
+        "Verified primary product categories",
+        "Verified OEM/ODM and private-label scope",
+        "Approved factory and quality-control evidence",
+        "Keyword demand and current ranking data: Needs verification",
+        "All claims, specifications, certifications, pricing, MOQ, capacity, and lead-time statements require owner verification",
+        "Image ownership and publication approval: Needs verification"
+      ],
+      "cta_draft": {
+        "label": "Discuss Your Paint Tool Sourcing Project",
+        "supporting_copy": "Share your product categories, target market, quantity, packaging, and destination for sales review.",
+        "status": "approval_required"
+      },
+      "editorial_checks": [
+        "Use plain, buyer-focused English and avoid unsupported superlatives.",
+        "Every factual or commercial claim has an approved source owner.",
+        "Product terminology is consistent across title, H1, copy, form, and schema.",
+        "The primary keyword is used naturally only after demand validation.",
+        "The page has one clear primary conversion action and working destination.",
+        "Headings, links, image alt text, mobile layout, and accessibility are reviewed."
+      ],
+      "publication_gate": {
+        "production_publish_allowed": false,
+        "required_approvers": [
+          "business fact owner",
+          "SEO reviewer",
+          "website owner"
+        ],
+        "status": "brief_only"
+      }
+    },
+    {
+      "content_brief_id": "CONTENT-002",
+      "url": "https://www.siruitool.com/products",
+      "page_type": "product_index",
+      "page_goal": "Help importers and distributors understand the verified product range and choose the next sourcing path.",
+      "target_markets": [
+        "United States",
+        "United Kingdom",
+        "Australia"
+      ],
+      "target_audiences": [
+        "importers",
+        "distributors",
+        "private-label buyers"
+      ],
+      "search_intent": "commercial category",
+      "current_metadata": {
+        "title": "Paint Brush & Paint Roller Manufacturer | SIRUI",
+        "meta_description": "Wholesale paint brushes and paint rollers for OEM, private-label, distributor, and professional sourcing programs.",
+        "h1": [
+          "Paint Brushes & Paint Rollers"
+        ]
+      },
+      "keyword_assignment": {
+        "primary": [
+          "wholesale paint brushes",
+          "wholesale paint rollers"
+        ],
+        "secondary": [
+          "OEM painting tools",
+          "private label paint brushes",
+          "paint roller supplier"
+        ],
+        "validation_status": "needs_keyword_research",
+        "usage_rule": "Use naturally after keyword validation; do not force repetition."
+      },
+      "metadata_brief": {
+        "title_draft": "Wholesale Paint Brushes & Paint Rollers | OEM Manufacturer | SIRUI",
+        "meta_description_should_cover": [
+          "product range",
+          "wholesale and OEM availability",
+          "distributor sourcing",
+          "inquiry action"
+        ],
+        "draft_status": "approval_required"
+      },
+      "recommended_sections": [
+        {
+          "section": "Category introduction",
+          "objective": "Explain which verified product families are available and who the page serves.",
+          "evidence_status": "Needs verification"
+        },
+        {
+          "section": "Product category grid",
+          "objective": "Use consistent category names, images, and links to detail pages.",
+          "evidence_status": "Needs verification"
+        },
+        {
+          "section": "Buyer selection guidance",
+          "objective": "Explain selection factors using verified materials, sizes, applications, and formats.",
+          "evidence_status": "Needs verification"
+        },
+        {
+          "section": "OEM and packaging options",
+          "objective": "Describe only verified private-label and packaging options.",
+          "evidence_status": "Needs verification"
+        },
+        {
+          "section": "Product-range inquiry CTA",
+          "objective": "Invite buyers to share the range and market they are sourcing for.",
+          "evidence_status": "Needs verification"
+        }
+      ],
+      "required_verified_inputs": [
+        "Approved product category taxonomy",
+        "Verified category descriptions and images",
+        "Verified selection attributes by category",
+        "Approved OEM and packaging options",
+        "Keyword demand and current ranking data: Needs verification",
+        "All claims, specifications, certifications, pricing, MOQ, capacity, and lead-time statements require owner verification",
+        "Image ownership and publication approval: Needs verification"
+      ],
+      "cta_draft": {
+        "label": "Request a Product Range Discussion",
+        "supporting_copy": "Tell us which paint tool categories, sizes, quantities, and market you are sourcing for.",
+        "status": "approval_required"
+      },
+      "editorial_checks": [
+        "Use plain, buyer-focused English and avoid unsupported superlatives.",
+        "Every factual or commercial claim has an approved source owner.",
+        "Product terminology is consistent across title, H1, copy, form, and schema.",
+        "The primary keyword is used naturally only after demand validation.",
+        "The page has one clear primary conversion action and working destination.",
+        "Headings, links, image alt text, mobile layout, and accessibility are reviewed."
+      ],
+      "publication_gate": {
+        "production_publish_allowed": false,
+        "required_approvers": [
+          "business fact owner",
+          "SEO reviewer",
+          "website owner"
+        ],
+        "status": "brief_only"
+      }
+    },
+    {
+      "content_brief_id": "CONTENT-003",
+      "url": "https://www.siruitool.com/products/angled-sash-paint-brush-50mm",
+      "page_type": "product_detail",
+      "page_goal": "Give a B2B buyer enough verified product information to assess fit and submit a qualified inquiry.",
+      "target_markets": [
+        "United States",
+        "United Kingdom",
+        "Australia"
+      ],
+      "target_audiences": [
+        "importers",
+        "distributors",
+        "private-label buyers"
+      ],
+      "search_intent": "commercial product",
+      "current_metadata": {
+        "title": "50mm Angled Sash Paint Brush | PB-ANGLE-050",
+        "meta_description": "Angled sash brush for precision cutting-in, with tapered synthetic filaments and customizable handle colors for private-label ranges.",
+        "h1": [
+          "50mm Angled Sash Paint Brush"
+        ]
+      },
+      "keyword_assignment": {
+        "primary": [
+          "50mm angled sash paint brush",
+          "50mm angled sash paint brush wholesale"
+        ],
+        "secondary": [
+          "50mm angled sash paint brush manufacturer",
+          "private label 50mm angled sash paint brush",
+          "OEM 50mm angled sash paint brush"
+        ],
+        "validation_status": "needs_keyword_research",
+        "usage_rule": "Use naturally after keyword validation; do not force repetition."
+      },
+      "metadata_brief": {
+        "title_draft": "50mm Angled Sash Paint Brush | Product Code or Key Specification | SIRUI",
+        "meta_description_should_cover": [
+          "verified material and size",
+          "buyer application",
+          "verified customization options",
+          "inquiry action"
+        ],
+        "draft_status": "approval_required"
+      },
+      "recommended_sections": [
+        {
+          "section": "Product summary",
+          "objective": "State the verified product name, code, buyer application, and differentiating facts.",
+          "evidence_status": "Needs verification"
+        },
+        {
+          "section": "Specifications",
+          "objective": "Present verified material, size, dimensions, components, and packaging in a scannable table.",
+          "evidence_status": "Needs verification"
+        },
+        {
+          "section": "Applications and selection",
+          "objective": "Explain verified use cases and how buyers should select the correct option.",
+          "evidence_status": "Needs verification"
+        },
+        {
+          "section": "OEM and private label",
+          "objective": "List only verified logo, color, handle, cover, label, packaging, or carton options.",
+          "evidence_status": "Needs verification"
+        },
+        {
+          "section": "Quality evidence",
+          "objective": "Show approved inspection, production, or test evidence relevant to this product.",
+          "evidence_status": "Needs verification"
+        },
+        {
+          "section": "Related products",
+          "objective": "Link to genuinely related products and the parent category.",
+          "evidence_status": "Needs verification"
+        },
+        {
+          "section": "Product inquiry CTA",
+          "objective": "Collect specifications, quantity, customization, packaging, and destination details.",
+          "evidence_status": "Needs verification"
+        }
+      ],
+      "required_verified_inputs": [
+        "Verified product name and product code",
+        "Verified material, size, dimensions, components, and applications",
+        "Verified customization and packaging options",
+        "Approved product images and quality evidence",
+        "Keyword demand and current ranking data: Needs verification",
+        "All claims, specifications, certifications, pricing, MOQ, capacity, and lead-time statements require owner verification",
+        "Image ownership and publication approval: Needs verification"
+      ],
+      "cta_draft": {
+        "label": "Request Product Information or a Quote",
+        "supporting_copy": "Send the required size, material, quantity, customization, packaging, and destination for sales review.",
+        "status": "approval_required"
+      },
+      "editorial_checks": [
+        "Use plain, buyer-focused English and avoid unsupported superlatives.",
+        "Every factual or commercial claim has an approved source owner.",
+        "Product terminology is consistent across title, H1, copy, form, and schema.",
+        "The primary keyword is used naturally only after demand validation.",
+        "The page has one clear primary conversion action and working destination.",
+        "Headings, links, image alt text, mobile layout, and accessibility are reviewed."
+      ],
+      "publication_gate": {
+        "production_publish_allowed": false,
+        "required_approvers": [
+          "business fact owner",
+          "SEO reviewer",
+          "website owner"
+        ],
+        "status": "brief_only"
+      }
+    },
+    {
+      "content_brief_id": "CONTENT-004",
+      "url": "https://www.siruitool.com/products/flat-wall-paint-brush-25mm",
+      "page_type": "product_detail",
+      "page_goal": "Give a B2B buyer enough verified product information to assess fit and submit a qualified inquiry.",
+      "target_markets": [
+        "United States",
+        "United Kingdom",
+        "Australia"
+      ],
+      "target_audiences": [
+        "importers",
+        "distributors",
+        "private-label buyers"
+      ],
+      "search_intent": "commercial product",
+      "current_metadata": {
+        "title": "25mm Flat Wall Paint Brush | PB-FLAT-025",
+        "meta_description": "Economical flat paint brush with dense PET/PBT bristles, stainless ferrule, and smooth beech handle for contractor and retail programs.",
+        "h1": [
+          "25mm Flat Wall Paint Brush"
+        ]
+      },
+      "keyword_assignment": {
+        "primary": [
+          "25mm flat wall paint brush",
+          "25mm flat wall paint brush wholesale"
+        ],
+        "secondary": [
+          "25mm flat wall paint brush manufacturer",
+          "private label 25mm flat wall paint brush",
+          "OEM 25mm flat wall paint brush"
+        ],
+        "validation_status": "needs_keyword_research",
+        "usage_rule": "Use naturally after keyword validation; do not force repetition."
+      },
+      "metadata_brief": {
+        "title_draft": "25mm Flat Wall Paint Brush | Product Code or Key Specification | SIRUI",
+        "meta_description_should_cover": [
+          "verified material and size",
+          "buyer application",
+          "verified customization options",
+          "inquiry action"
+        ],
+        "draft_status": "approval_required"
+      },
+      "recommended_sections": [
+        {
+          "section": "Product summary",
+          "objective": "State the verified product name, code, buyer application, and differentiating facts.",
+          "evidence_status": "Needs verification"
+        },
+        {
+          "section": "Specifications",
+          "objective": "Present verified material, size, dimensions, components, and packaging in a scannable table.",
+          "evidence_status": "Needs verification"
+        },
+        {
+          "section": "Applications and selection",
+          "objective": "Explain verified use cases and how buyers should select the correct option.",
+          "evidence_status": "Needs verification"
+        },
+        {
+          "section": "OEM and private label",
+          "objective": "List only verified logo, color, handle, cover, label, packaging, or carton options.",
+          "evidence_status": "Needs verification"
+        },
+        {
+          "section": "Quality evidence",
+          "objective": "Show approved inspection, production, or test evidence relevant to this product.",
+          "evidence_status": "Needs verification"
+        },
+        {
+          "section": "Related products",
+          "objective": "Link to genuinely related products and the parent category.",
+          "evidence_status": "Needs verification"
+        },
+        {
+          "section": "Product inquiry CTA",
+          "objective": "Collect specifications, quantity, customization, packaging, and destination details.",
+          "evidence_status": "Needs verification"
+        }
+      ],
+      "required_verified_inputs": [
+        "Verified product name and product code",
+        "Verified material, size, dimensions, components, and applications",
+        "Verified customization and packaging options",
+        "Approved product images and quality evidence",
+        "Keyword demand and current ranking data: Needs verification",
+        "All claims, specifications, certifications, pricing, MOQ, capacity, and lead-time statements require owner verification",
+        "Image ownership and publication approval: Needs verification"
+      ],
+      "cta_draft": {
+        "label": "Request Product Information or a Quote",
+        "supporting_copy": "Send the required size, material, quantity, customization, packaging, and destination for sales review.",
+        "status": "approval_required"
+      },
+      "editorial_checks": [
+        "Use plain, buyer-focused English and avoid unsupported superlatives.",
+        "Every factual or commercial claim has an approved source owner.",
+        "Product terminology is consistent across title, H1, copy, form, and schema.",
+        "The primary keyword is used naturally only after demand validation.",
+        "The page has one clear primary conversion action and working destination.",
+        "Headings, links, image alt text, mobile layout, and accessibility are reviewed."
+      ],
+      "publication_gate": {
+        "production_publish_allowed": false,
+        "required_approvers": [
+          "business fact owner",
+          "SEO reviewer",
+          "website owner"
+        ],
+        "status": "brief_only"
+      }
+    },
+    {
+      "content_brief_id": "CONTENT-005",
+      "url": "https://www.siruitool.com/products/microfiber-paint-roller-kit",
+      "page_type": "product_detail",
+      "page_goal": "Give a B2B buyer enough verified product information to assess fit and submit a qualified inquiry.",
+      "target_markets": [
+        "United States",
+        "United Kingdom",
+        "Australia"
+      ],
+      "target_audiences": [
+        "importers",
+        "distributors",
+        "private-label buyers"
+      ],
+      "search_intent": "commercial product",
+      "current_metadata": {
+        "title": "Microfiber Paint Roller Kit | PB-ROLLER-009",
+        "meta_description": "Paint roller kit with microfiber sleeve, steel frame, and optional tray, ready for retail DIY and contractor channels.",
+        "h1": [
+          "Microfiber Paint Roller Kit"
+        ]
+      },
+      "keyword_assignment": {
+        "primary": [
+          "microfiber paint roller kit",
+          "microfiber paint roller kit wholesale"
+        ],
+        "secondary": [
+          "microfiber paint roller kit manufacturer",
+          "private label microfiber paint roller kit",
+          "OEM microfiber paint roller kit"
+        ],
+        "validation_status": "needs_keyword_research",
+        "usage_rule": "Use naturally after keyword validation; do not force repetition."
+      },
+      "metadata_brief": {
+        "title_draft": "Microfiber Paint Roller Kit | Product Code or Key Specification | SIRUI",
+        "meta_description_should_cover": [
+          "verified material and size",
+          "buyer application",
+          "verified customization options",
+          "inquiry action"
+        ],
+        "draft_status": "approval_required"
+      },
+      "recommended_sections": [
+        {
+          "section": "Product summary",
+          "objective": "State the verified product name, code, buyer application, and differentiating facts.",
+          "evidence_status": "Needs verification"
+        },
+        {
+          "section": "Specifications",
+          "objective": "Present verified material, size, dimensions, components, and packaging in a scannable table.",
+          "evidence_status": "Needs verification"
+        },
+        {
+          "section": "Applications and selection",
+          "objective": "Explain verified use cases and how buyers should select the correct option.",
+          "evidence_status": "Needs verification"
+        },
+        {
+          "section": "OEM and private label",
+          "objective": "List only verified logo, color, handle, cover, label, packaging, or carton options.",
+          "evidence_status": "Needs verification"
+        },
+        {
+          "section": "Quality evidence",
+          "objective": "Show approved inspection, production, or test evidence relevant to this product.",
+          "evidence_status": "Needs verification"
+        },
+        {
+          "section": "Related products",
+          "objective": "Link to genuinely related products and the parent category.",
+          "evidence_status": "Needs verification"
+        },
+        {
+          "section": "Product inquiry CTA",
+          "objective": "Collect specifications, quantity, customization, packaging, and destination details.",
+          "evidence_status": "Needs verification"
+        }
+      ],
+      "required_verified_inputs": [
+        "Verified product name and product code",
+        "Verified material, size, dimensions, components, and applications",
+        "Verified customization and packaging options",
+        "Approved product images and quality evidence",
+        "Keyword demand and current ranking data: Needs verification",
+        "All claims, specifications, certifications, pricing, MOQ, capacity, and lead-time statements require owner verification",
+        "Image ownership and publication approval: Needs verification"
+      ],
+      "cta_draft": {
+        "label": "Request Product Information or a Quote",
+        "supporting_copy": "Send the required size, material, quantity, customization, packaging, and destination for sales review.",
+        "status": "approval_required"
+      },
+      "editorial_checks": [
+        "Use plain, buyer-focused English and avoid unsupported superlatives.",
+        "Every factual or commercial claim has an approved source owner.",
+        "Product terminology is consistent across title, H1, copy, form, and schema.",
+        "The primary keyword is used naturally only after demand validation.",
+        "The page has one clear primary conversion action and working destination.",
+        "Headings, links, image alt text, mobile layout, and accessibility are reviewed."
+      ],
+      "publication_gate": {
+        "production_publish_allowed": false,
+        "required_approvers": [
+          "business fact owner",
+          "SEO reviewer",
+          "website owner"
+        ],
+        "status": "brief_only"
+      }
+    },
+    {
+      "content_brief_id": "CONTENT-006",
+      "url": "https://www.siruitool.com/factory",
+      "page_type": "about",
+      "page_goal": "Help overseas buyers verify the supplier using approved company, factory, process, and quality evidence.",
+      "target_markets": [
+        "United States",
+        "United Kingdom",
+        "Australia"
+      ],
+      "target_audiences": [
+        "importers",
+        "distributors",
+        "private-label buyers"
+      ],
+      "search_intent": "supplier validation",
+      "current_metadata": {
+        "title": "Factory | Paint Brush & Paint Roller Manufacturer",
+        "meta_description": "Review a practical production coordination workflow for paint brush and paint roller sourcing, samples, materials and packaging.",
+        "h1": [
+          "Factory"
+        ]
+      },
+      "keyword_assignment": {
+        "primary": [
+          "paint roller factory china",
+          "paint brush factory china"
+        ],
+        "secondary": [
+          "painting tool manufacturer",
+          "paint tool quality control",
+          "OEM painting tool factory"
+        ],
+        "validation_status": "needs_keyword_research",
+        "usage_rule": "Use naturally after keyword validation; do not force repetition."
+      },
+      "metadata_brief": {
+        "title_draft": "Paint Brush & Paint Roller Factory in China | SIRUI",
+        "meta_description_should_cover": [
+          "factory role",
+          "production workflow",
+          "quality-control evidence",
+          "OEM sourcing support"
+        ],
+        "draft_status": "approval_required"
+      },
+      "recommended_sections": [
+        {
+          "section": "Company overview",
+          "objective": "Use the approved legal identity, location, manufacturer role, and business focus.",
+          "evidence_status": "Needs verification"
+        },
+        {
+          "section": "Factory and production",
+          "objective": "Explain only verified production processes, equipment, and supported categories.",
+          "evidence_status": "Needs verification"
+        },
+        {
+          "section": "Quality-control workflow",
+          "objective": "Show verified inspection stages, records, and responsible functions.",
+          "evidence_status": "Needs verification"
+        },
+        {
+          "section": "OEM project support",
+          "objective": "Explain the approved buyer collaboration process without promising commercial terms.",
+          "evidence_status": "Needs verification"
+        },
+        {
+          "section": "Evidence gallery",
+          "objective": "Use dated, approved factory, process, team, and quality images with captions.",
+          "evidence_status": "Needs verification"
+        },
+        {
+          "section": "Supplier discussion CTA",
+          "objective": "Invite buyers to request relevant verified documentation or discuss a sourcing project.",
+          "evidence_status": "Needs verification"
+        }
+      ],
+      "required_verified_inputs": [
+        "Verified legal company identity and factory location",
+        "Approved production-process and equipment information",
+        "Approved quality-control workflow and evidence",
+        "Approved factory, team, and production images",
+        "Keyword demand and current ranking data: Needs verification",
+        "All claims, specifications, certifications, pricing, MOQ, capacity, and lead-time statements require owner verification",
+        "Image ownership and publication approval: Needs verification"
+      ],
+      "cta_draft": {
+        "label": "Discuss Your Supplier Requirements",
+        "supporting_copy": "Share the product range, quality documentation, market, and sourcing requirements you need reviewed.",
+        "status": "approval_required"
+      },
+      "editorial_checks": [
+        "Use plain, buyer-focused English and avoid unsupported superlatives.",
+        "Every factual or commercial claim has an approved source owner.",
+        "Product terminology is consistent across title, H1, copy, form, and schema.",
+        "The primary keyword is used naturally only after demand validation.",
+        "The page has one clear primary conversion action and working destination.",
+        "Headings, links, image alt text, mobile layout, and accessibility are reviewed."
+      ],
+      "publication_gate": {
+        "production_publish_allowed": false,
+        "required_approvers": [
+          "business fact owner",
+          "SEO reviewer",
+          "website owner"
+        ],
+        "status": "brief_only"
+      }
+    },
+    {
+      "content_brief_id": "CONTENT-007",
+      "url": "https://www.siruitool.com/oem-odm",
+      "page_type": "b2b_service",
+      "page_goal": "Explain the verified OEM, ODM, and private-label process and qualify B2B project inquiries.",
+      "target_markets": [
+        "United States",
+        "United Kingdom",
+        "Australia"
+      ],
+      "target_audiences": [
+        "importers",
+        "distributors",
+        "private-label buyers"
+      ],
+      "search_intent": "commercial service",
+      "current_metadata": {
+        "title": "OEM & Private Label Paint Brushes and Rollers | SIRUI",
+        "meta_description": "Discuss OEM, ODM and private-label paint brush and paint roller projects for import, distribution and branded sourcing.",
+        "h1": [
+          "OEM & Private Label Paint Brushes and Rollers"
+        ]
+      },
+      "keyword_assignment": {
+        "primary": [
+          "OEM paint roller manufacturer",
+          "private label paint brushes"
+        ],
+        "secondary": [
+          "ODM painting tools",
+          "custom paint roller packaging",
+          "private label painting tools supplier"
+        ],
+        "validation_status": "needs_keyword_research",
+        "usage_rule": "Use naturally after keyword validation; do not force repetition."
+      },
+      "metadata_brief": {
+        "title_draft": "OEM & Private Label Paint Brushes and Rollers | SIRUI",
+        "meta_description_should_cover": [
+          "OEM/ODM and private-label scope",
+          "product categories",
+          "custom packaging subject to verification",
+          "project inquiry action"
+        ],
+        "draft_status": "approval_required"
+      },
+      "recommended_sections": [
+        {
+          "section": "Service scope",
+          "objective": "Define verified OEM, ODM, private-label, logo, color, component, and packaging support.",
+          "evidence_status": "Needs verification"
+        },
+        {
+          "section": "Project workflow",
+          "objective": "Describe the approved steps from requirement review through sample, quotation, production, and shipment.",
+          "evidence_status": "Needs verification"
+        },
+        {
+          "section": "Customization matrix",
+          "objective": "Separate verified options by product category and identify constraints requiring sales confirmation.",
+          "evidence_status": "Needs verification"
+        },
+        {
+          "section": "Information buyers should provide",
+          "objective": "Request product, material, size, quantity, branding, packaging, destination, and timing needs.",
+          "evidence_status": "Needs verification"
+        },
+        {
+          "section": "FAQ",
+          "objective": "Answer only approved questions; escalate MOQ, price, lead time, payment, and certification to sales.",
+          "evidence_status": "Needs verification"
+        },
+        {
+          "section": "OEM project CTA",
+          "objective": "Invite a structured project inquiry without promising feasibility or terms.",
+          "evidence_status": "Needs verification"
+        }
+      ],
+      "required_verified_inputs": [
+        "Verified OEM, ODM, and private-label scope by product category",
+        "Approved project workflow and responsible teams",
+        "Verified customization and packaging matrix",
+        "Sales-approved FAQ answers",
+        "Keyword demand and current ranking data: Needs verification",
+        "All claims, specifications, certifications, pricing, MOQ, capacity, and lead-time statements require owner verification",
+        "Image ownership and publication approval: Needs verification"
+      ],
+      "cta_draft": {
+        "label": "Discuss an OEM or Private-Label Project",
+        "supporting_copy": "Send your product, quantity, branding, packaging, destination, and target timing for feasibility review.",
+        "status": "approval_required"
+      },
+      "editorial_checks": [
+        "Use plain, buyer-focused English and avoid unsupported superlatives.",
+        "Every factual or commercial claim has an approved source owner.",
+        "Product terminology is consistent across title, H1, copy, form, and schema.",
+        "The primary keyword is used naturally only after demand validation.",
+        "The page has one clear primary conversion action and working destination.",
+        "Headings, links, image alt text, mobile layout, and accessibility are reviewed."
+      ],
+      "publication_gate": {
+        "production_publish_allowed": false,
+        "required_approvers": [
+          "business fact owner",
+          "SEO reviewer",
+          "website owner"
+        ],
+        "status": "brief_only"
+      }
+    },
+    {
+      "content_brief_id": "CONTENT-008",
+      "url": "https://www.siruitool.com/inquiry",
+      "page_type": "contact",
+      "page_goal": "Collect enough information for sales to qualify and route an overseas B2B product inquiry.",
+      "target_markets": [
+        "United States",
+        "United Kingdom",
+        "Australia"
+      ],
+      "target_audiences": [
+        "importers",
+        "distributors",
+        "private-label buyers"
+      ],
+      "search_intent": "conversion",
+      "current_metadata": {
+        "title": "Inquiry List | SIRUI INTERNATIONAL TRADE ZHENJIANG CO., LTD.",
+        "meta_description": "Submit single-product or multi-product brush inquiries without checkout or online payment.",
+        "h1": [
+          "Send product inquiry"
+        ]
+      },
+      "keyword_assignment": {
+        "primary": [
+          "SIRUI product inquiry",
+          "painting tools request a quote"
+        ],
+        "secondary": [
+          "OEM paint roller inquiry",
+          "paint brush quotation"
+        ],
+        "validation_status": "needs_keyword_research",
+        "usage_rule": "Use naturally after keyword validation; do not force repetition."
+      },
+      "metadata_brief": {
+        "title_draft": "Request a Quote for Paint Brushes & Paint Rollers | SIRUI",
+        "meta_description_should_cover": [
+          "paint brush and paint roller inquiries",
+          "OEM/private-label project context",
+          "required buyer specifications",
+          "sales contact action"
+        ],
+        "draft_status": "approval_required"
+      },
+      "recommended_sections": [
+        {
+          "section": "Inquiry introduction",
+          "objective": "Explain who should use the form and what information helps the sales review.",
+          "evidence_status": "Needs verification"
+        },
+        {
+          "section": "Buyer and company fields",
+          "objective": "Collect name, company, role, website, email, phone, and country.",
+          "evidence_status": "Needs verification"
+        },
+        {
+          "section": "Project requirement fields",
+          "objective": "Collect product, material, size, quantity, branding, packaging, destination, timing, and sample needs.",
+          "evidence_status": "Needs verification"
+        },
+        {
+          "section": "Privacy and consent",
+          "objective": "Add approved privacy wording and explain how submitted information will be handled.",
+          "evidence_status": "Needs verification"
+        },
+        {
+          "section": "Alternative contact route",
+          "objective": "Show only verified sales contact channels and operating details.",
+          "evidence_status": "Needs verification"
+        }
+      ],
+      "required_verified_inputs": [
+        "Approved sales contact details",
+        "Approved inquiry form fields and routing owner",
+        "Approved privacy and consent wording",
+        "Approved response-time wording, if any",
+        "Keyword demand and current ranking data: Needs verification",
+        "All claims, specifications, certifications, pricing, MOQ, capacity, and lead-time statements require owner verification",
+        "Image ownership and publication approval: Needs verification"
+      ],
+      "cta_draft": {
+        "label": "Send Your Product Requirements",
+        "supporting_copy": "Provide your company, product, quantity, customization, packaging, and destination details for review.",
+        "status": "approval_required"
+      },
+      "editorial_checks": [
+        "Use plain, buyer-focused English and avoid unsupported superlatives.",
+        "Every factual or commercial claim has an approved source owner.",
+        "Product terminology is consistent across title, H1, copy, form, and schema.",
+        "The primary keyword is used naturally only after demand validation.",
+        "The page has one clear primary conversion action and working destination.",
+        "Headings, links, image alt text, mobile layout, and accessibility are reviewed."
+      ],
+      "publication_gate": {
+        "production_publish_allowed": false,
+        "required_approvers": [
+          "business fact owner",
+          "SEO reviewer",
+          "website owner"
+        ],
+        "status": "brief_only"
+      }
+    }
+  ],
+  "global_definition_of_done": [
+    "All factual and commercial statements are verified by a named owner.",
+    "Keyword demand and page assignment are reviewed by SEO.",
+    "The draft answers the target buyer's page-specific questions.",
+    "The CTA destination, inquiry fields, privacy wording, and routing are tested.",
+    "The approved content passes content, SEO, legal or privacy, and website review before publication."
+  ]
+}

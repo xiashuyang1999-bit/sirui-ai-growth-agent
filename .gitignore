@@ -17,6 +17,16 @@ ENV/
 .env.*
 !.env.example
 
+# Real inquiries and qualification outputs may contain personal data
+data/inquiries/
+reports/inquiries/
+data/pipeline/
+reports/pipeline/
+data/followups/
+reports/followups/
+data/analytics/
+reports/analytics/
+
 # Packaging and coverage
 build/
 dist/

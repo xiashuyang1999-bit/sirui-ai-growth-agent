@@ -1,0 +1,23 @@
+{
+  "source": "website_form",
+  "company": "",
+  "website": "",
+  "company_verified": false,
+  "contact_name": "",
+  "role": "",
+  "email": "",
+  "phone": "",
+  "country": "",
+  "segment": "",
+  "product": "",
+  "material": "",
+  "size": "",
+  "components": "",
+  "quantity": "",
+  "oem_private_label": "",
+  "packaging": "",
+  "destination": "",
+  "target_delivery_time": "",
+  "sample_requirements": "",
+  "message": ""
+}

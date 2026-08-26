@@ -1,0 +1,95 @@
+{
+  "growth_workflow_version": "0.1",
+  "generated_at": "2026-08-25T13:32:35.834588+00:00",
+  "source": {
+    "audit_report": "reports/sirui_official_audit_v0_4.json",
+    "audit_agent_version": "0.4",
+    "website": "https://www.siruitool.com/"
+  },
+  "artifacts": {
+    "seo_plan": "seo_plan.json",
+    "developer_plan": "developer_plan.json",
+    "content_plan": "content_plan.json"
+  },
+  "summary": {
+    "pages_audited": 8,
+    "audit_issues": 6,
+    "seo_tasks": 6,
+    "developer_tasks": 6,
+    "content_briefs": 8,
+    "production_changes_authorized": 0,
+    "production_pages_authorized": 0
+  },
+  "measurement_framework": [
+    {
+      "metric": "website_sessions",
+      "definition": "Visits to the website, segmented by source, market, landing page, and device.",
+      "recommended_source": "GA4 or approved web analytics",
+      "owner": "marketing",
+      "integration_status": "Needs verification",
+      "current_value": "Needs verification"
+    },
+    {
+      "metric": "organic_search_clicks",
+      "definition": "Clicks from unpaid search results, segmented by query, page, country, and device.",
+      "recommended_source": "Google Search Console",
+      "owner": "SEO",
+      "integration_status": "Needs verification",
+      "current_value": "Needs verification"
+    },
+    {
+      "metric": "inquiry_submissions",
+      "definition": "Successfully received website inquiry forms or approved direct-contact conversions.",
+      "recommended_source": "Form backend plus analytics conversion event",
+      "owner": "website and sales operations",
+      "integration_status": "Needs verification",
+      "current_value": "Needs verification"
+    },
+    {
+      "metric": "qualified_inquiries",
+      "definition": "Verified B2B inquiries with credible company identity and a relevant product or sourcing requirement.",
+      "recommended_source": "Approved CRM or controlled sales tracker",
+      "owner": "sales",
+      "integration_status": "Needs verification",
+      "current_value": "Needs verification"
+    },
+    {
+      "metric": "sample_projects",
+      "definition": "Qualified opportunities that progress to an approved sample discussion or shipment.",
+      "recommended_source": "Approved CRM or controlled sales tracker",
+      "owner": "sales",
+      "integration_status": "Needs verification",
+      "current_value": "Needs verification"
+    },
+    {
+      "metric": "quotations",
+      "definition": "Formal quotations issued after product, quantity, customization, packaging, and destination review.",
+      "recommended_source": "Approved CRM or quotation register",
+      "owner": "sales",
+      "integration_status": "Needs verification",
+      "current_value": "Needs verification"
+    },
+    {
+      "metric": "orders",
+      "definition": "Confirmed B2B orders linked to a traceable source and opportunity record.",
+      "recommended_source": "Approved CRM and order system",
+      "owner": "sales and operations",
+      "integration_status": "Needs verification",
+      "current_value": "Needs verification"
+    }
+  ],
+  "approval_state": {
+    "analysis_and_planning_complete": true,
+    "production_change_allowed": false,
+    "content_publication_allowed": false,
+    "external_messages_allowed": false,
+    "human_approval_required": true
+  },
+  "next_actions": [
+    "Assign and verify every Needs verification input to a named owner.",
+    "Review developer tasks and test approved changes in staging or preview.",
+    "Review keyword demand and complete factual inputs before drafting page copy.",
+    "Connect approved analytics, Search Console, form, and sales pipeline sources.",
+    "Rerun the audit after approved production changes and compare results."
+  ]
+}

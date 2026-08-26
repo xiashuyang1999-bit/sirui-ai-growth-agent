@@ -1,0 +1,26 @@
+{
+  "period": {
+    "start": "",
+    "end": ""
+  },
+  "record_template": {
+    "record_id": "",
+    "grade": "",
+    "score": "",
+    "stage": "new",
+    "country": "",
+    "segment": "",
+    "next_action": "",
+    "blocker": "",
+    "owner": "",
+    "milestones": {
+      "outreach_drafted": false,
+      "outreach_sent": false,
+      "reply_received": false,
+      "sample_started": false,
+      "quotation_issued": false,
+      "order_confirmed": false
+    }
+  },
+  "records": []
+}

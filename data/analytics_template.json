@@ -1,0 +1,30 @@
+{
+  "period": {
+    "start": "",
+    "end": ""
+  },
+  "website": {
+    "sessions": null,
+    "engaged_sessions": null,
+    "inquiry_submissions": null
+  },
+  "search": {
+    "clicks": null,
+    "impressions": null,
+    "average_position": null
+  },
+  "sales": {
+    "attribution_scope": "",
+    "qualified_inquiries": null,
+    "sample_projects": null,
+    "quotations": null,
+    "orders": null
+  },
+  "breakdowns": {
+    "markets": [],
+    "sources": [],
+    "landing_pages": [],
+    "queries": [],
+    "products": []
+  }
+}
